@@ -169,20 +169,23 @@ void FabMap::compareAndAdd(cv::Mat frame, int* out_newID, int* out_loopID)
 		else
 		{
 			// Probability for existing place
-			if (l->match >= minLoopProbability) // abs( out_newID -  out_loopID) <= 250)
+			if (l->match >= minLoopProbability && abs( out_newID -  out_loopID) >= 200)
 			{
 				*out_loopID = l->imgIdx;      // if a loop closure is detected
-				if (debugProbabilites)
+				if (debugProbabilites){
 					std::cout << "Debug!!!!!" << std::endl;
 					printf("\n");
+					}
 				return;
 			}
 			accumulatedProbability += l->match;
 		}
 		
 		if (! debugProbabilites && accumulatedProbability > 1 - minLoopProbability)
+		{
 			std::cout << "Debug break!!!!!" << std::endl;
 			break; // not possible anymore to find a frame with high enough probability
+		}
 	}
 	if (debugProbabilites)
 		printf("\n");
