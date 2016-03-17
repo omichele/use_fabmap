@@ -54,6 +54,8 @@ int main(int argc, char * argv[])
 
 	sequence1 >> img1;
 
+	sequence1 >> img1;
+
 	// cout << "Image type: " << img0.type() << endl;
 
 	// cvtColor(img, img, CV_BayerGR2RGB);
@@ -67,6 +69,7 @@ int main(int argc, char * argv[])
 	cv::Mat targetROI1 = dst( cv::Rect(0, 0, img0.cols, img0.rows) );
 	cv::Mat targetROI2 = dst( cv::Rect(img0.cols + 10 , 0, img0.cols, img0.rows) );
     cv::Mat targetROI3 = dst( cv::Rect(0 , img0.rows + 10, img0.cols, img0.rows) );
+    cv::Mat targetROI4 = dst( cv::Rect(img0.cols + 10 , img0.rows + 10, img0.cols, img0.rows) );
 	img0.copyTo(targetROI1);
 	img1.copyTo(targetROI2);
 
@@ -74,7 +77,7 @@ int main(int argc, char * argv[])
 	// show the image on window
 	imshow("OpenCV Window", dst);
 	// wait key for 5000 ms
-	waitKey(5);
+	waitKey(40);
 	// waitKey(0);
 
 	// sleep(5000);
@@ -90,6 +93,10 @@ int main(int argc, char * argv[])
 
 	for(;;){
 		sequence0 >> img0;
+
+		sequence0 >> img0;
+
+		sequence1 >> img1;
 
 		sequence1 >> img1;
 
@@ -114,17 +121,18 @@ int main(int argc, char * argv[])
 			return -1;
 
 		// fabmapIDToKeyframe.insert(std::make_pair(newID, img));
-		memory.push_back(img0);
+		memory.push_back(img0.clone());
+
 		if (loopID >= 0){
 			cout << "LOOP CLOSURE!" << endl;
 			cout << "Current image matches with image:" << loopID << "!!!!" << endl;
-			cout << endl;
-			cout << endl;
-			cout << endl;
+//			cout << endl;
+//			cout << endl;
+//			cout << endl;
 			// loop_img = fabmapIDToKeyframe.at(loopID);
 
 
-			loop_img = memory[loopID];
+			loop_img = memory.at(loopID + 2);  // needed to make things work
 
 			//				namedWindow("test");
 			//
@@ -139,14 +147,23 @@ int main(int argc, char * argv[])
 		img0.copyTo(targetROI1);
 		img1.copyTo(targetROI2);
 
+//		cv::Mat test = memory.front();
+//		test.copyTo(targetROI4);
+//		cv::Mat test;
+//		if(memory.size() > 16){
+//			cout << "Baobab" << endl;
+//			test = memory.at(16);
+//			test.copyTo(targetROI4);
+//		}
+
 		// show the image on window
 		imshow("OpenCV Window", dst);
 
 
 
-		waitKey(5);
+		waitKey(40);
 
-		// usleep(20);
+		// usleep(500);
 
 
 

@@ -146,36 +146,49 @@ void FabMap::compareAndAdd(cv::Mat frame, int* out_newID, int* out_loopID)
 		}
 	}
 	
-	const float minLoopProbability = 0.8f;
+	const float minLoopProbability = 0.99f;
 	float accumulatedProbability = 0;
 
 	// #################### IMPORTANT  !!!!!!!!!!!!#########################
-	const bool debugProbabilites = true;
+	const bool debugProbabilites = false;
+	int counter = 0;
 
+	if (debugProbabilites){
+		printf("Current image number: %d \n", *out_newID);
+		printf("FabMap probabilities: \n");
+	}
 
-	if (debugProbabilites)
-		printf("FabMap probabilities:");
-	for(auto l = matches.begin(); l != matches.end(); ++ l)
+	printf("Current image number: %d \n", *out_newID);
+
+	for( auto l = matches.begin(); l != matches.end(); ++l )
 	{
-		if (debugProbabilites)
-			printf(" (%i: %f)", l->imgIdx, l->match);
+		counter++;
+
+		if (debugProbabilites){
+			printf(" (%i: %f) ", l->imgIdx, l->match);
+			// std::cout << "Current processed image: " << *out_newID << std::endl;
+		}
 		
 		if(l->imgIdx < 0)
 		{
-			// Probability for new place
+			// Probability for new place:  index = -1
 			accumulatedProbability += l->match;
-			std::cout << " Accumulating probability" << std::endl;
+			// std::cout << "New place probability!" << std::endl;
 		}
 		else
 		{
 			// Probability for existing place
-			if (l->match >= minLoopProbability && abs( out_newID -  out_loopID) >= 200)
+			if (l->match >= minLoopProbability && abs( *out_newID - counter - 2 ) >= 80)
 			{
 				*out_loopID = l->imgIdx;      // if a loop closure is detected
 				if (debugProbabilites){
-					std::cout << "Debug!!!!!" << std::endl;
+					std::cout << std::endl << "Match!!! Prob = "  << l->match << std::endl;
 					printf("\n");
-					}
+				}
+				// std::cout << std::endl << counter  << std::endl;
+				// std::cout << std::endl << abs( *out_newID -  counter )  << std::endl;
+				std::cout << std::endl << "Match!!! Prob = "  << l->match << std::endl;
+				printf("\n");
 				return;
 			}
 			accumulatedProbability += l->match;
@@ -190,7 +203,7 @@ void FabMap::compareAndAdd(cv::Mat frame, int* out_newID, int* out_loopID)
 	if (debugProbabilites)
 		printf("\n");
 	
-	*out_loopID = -1;
+	*out_loopID = -1;			// important !!!!!!!!
 	return;
 }
 
