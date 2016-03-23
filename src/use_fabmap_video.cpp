@@ -116,7 +116,7 @@ int main(int argc, char * argv[])
 
 
 		int newID, loopID;
-		fabMap.compareAndAdd(img0, &newID, &loopID);
+		fabMap.compareAndAdd(img0, &newID, &loopID, targetROI4);
 		if (newID < 0)
 			return -1;
 

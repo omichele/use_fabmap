@@ -41,8 +41,10 @@ public:
 // 	int compare(KeyFrame* keyframe);
 
 	/** Combination of compare() followed by add() (more efficient). */
-	void compareAndAdd(cv::Mat keyframe, int* out_newID, int* out_loopID);
+	void compareAndAdd(cv::Mat keyframe, int* out_newID, int* out_loopID, cv::Mat targetROI);
 	
+	void compareAndAdd(cv::Mat keyframe, int* out_newID, int* out_loopID);
+
 	/** Returns if the class is initialized correctly (i.e. if the required
 	 *  files could be loaded). */
 	bool isValid() const;

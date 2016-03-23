@@ -103,7 +103,7 @@ FabMap::~FabMap()
 
 
 
-void FabMap::compareAndAdd(cv::Mat frame, int* out_newID, int* out_loopID)
+void FabMap::compareAndAdd(cv::Mat frame, int* out_newID, int* out_loopID, cv::Mat targetROI)
 {
 	// Convert keyframe image data to 3-channel OpenCV Mat (theoretically unneccessary)
 	// cv::Mat frame;
@@ -112,7 +112,7 @@ void FabMap::compareAndAdd(cv::Mat frame, int* out_newID, int* out_loopID)
 	//cv::cvtColor(frame, frame, CV_GRAY2RGB);
 
 	// Generate FabMap bag-of-words data (image descriptor)
-	cv::Mat bow;
+	cv::Mat bow, kptsImg;
 	std::vector<cv::KeyPoint> kpts;
 	detector->detect(frame, kpts);            // detector of keypoints
 	if (kpts.empty())
@@ -122,6 +122,11 @@ void FabMap::compareAndAdd(cv::Mat frame, int* out_newID, int* out_loopID)
 		*out_loopID = -1;
 		return;
 	}
+
+	cv::drawKeypoints(frame, kpts, kptsImg);
+
+	kptsImg.copyTo(targetROI);
+
 	bide->compute(frame, kpts, bow);          // compute the descriptor (in terms of the dictionary)
 	
 	// Run FabMap
@@ -206,6 +211,112 @@ void FabMap::compareAndAdd(cv::Mat frame, int* out_newID, int* out_loopID)
 	*out_loopID = -1;			// important !!!!!!!!
 	return;
 }
+
+
+void FabMap::compareAndAdd(cv::Mat frame, int* out_newID, int* out_loopID)
+{
+	// Convert keyframe image data to 3-channel OpenCV Mat (theoretically unneccessary)
+	// cv::Mat frame;
+	// cv::Mat keyFrameImage(keyframe->height(), keyframe->width(), CV_32F, const_cast<float*>(keyframe->image()));
+	// keyFrameImage.convertTo(frame, CV_8UC1);
+	//cv::cvtColor(frame, frame, CV_GRAY2RGB);
+
+	// Generate FabMap bag-of-words data (image descriptor)
+	cv::Mat bow;
+	std::vector<cv::KeyPoint> kpts;
+	detector->detect(frame, kpts);            // detector of keypoints
+	if (kpts.empty())
+	{
+		std::cout << "No keypoints detected!!!!" << std::endl;
+		*out_newID = -1;
+		*out_loopID = -1;
+		return;
+	}
+	bide->compute(frame, kpts, bow);          // compute the descriptor (in terms of the dictionary)
+
+	// Run FabMap
+	std::vector<of2::IMatch> matches;
+	if (nextImageID > 0)
+		fabMap->compare(bow, matches);         // matching !!!!!!
+	fabMap->add(bow);                          // add the descriptors
+	*out_newID = nextImageID;
+	++nextImageID;
+
+	if (printConfusionMatrix)
+	{
+		cv::Mat resizedMat(nextImageID, nextImageID, confusionMat.type(), cv::Scalar(0));
+		if (confusionMat.rows > 0)
+			confusionMat.copyTo(resizedMat(cv::Rect(cv::Point(0, 0), confusionMat.size())));
+		confusionMat = resizedMat;
+
+		for(auto l = matches.begin(); l != matches.end(); ++ l)
+		{
+			int col = (l->imgIdx < 0) ? (nextImageID-1) : l->imgIdx;
+			confusionMat.at<float>(nextImageID-1, col) = l->match;
+		}
+	}
+
+	const float minLoopProbability = 0.99f;
+	float accumulatedProbability = 0;
+
+	// #################### IMPORTANT  !!!!!!!!!!!!#########################
+	const bool debugProbabilites = false;
+	int counter = 0;
+
+	if (debugProbabilites){
+		printf("Current image number: %d \n", *out_newID);
+		printf("FabMap probabilities: \n");
+	}
+
+	printf("Current image number: %d \n", *out_newID);
+
+	for( auto l = matches.begin(); l != matches.end(); ++l )
+	{
+		counter++;
+
+		if (debugProbabilites){
+			printf(" (%i: %f) ", l->imgIdx, l->match);
+			// std::cout << "Current processed image: " << *out_newID << std::endl;
+		}
+
+		if(l->imgIdx < 0)
+		{
+			// Probability for new place:  index = -1
+			accumulatedProbability += l->match;
+			// std::cout << "New place probability!" << std::endl;
+		}
+		else
+		{
+			// Probability for existing place
+			if (l->match >= minLoopProbability && abs( *out_newID - counter - 2 ) >= 80)
+			{
+				*out_loopID = l->imgIdx;      // if a loop closure is detected
+				if (debugProbabilites){
+					std::cout << std::endl << "Match!!! Prob = "  << l->match << std::endl;
+					printf("\n");
+				}
+				// std::cout << std::endl << counter  << std::endl;
+				// std::cout << std::endl << abs( *out_newID -  counter )  << std::endl;
+				std::cout << std::endl << "Match!!! Prob = "  << l->match << std::endl;
+				printf("\n");
+				return;
+			}
+			accumulatedProbability += l->match;
+		}
+
+		if (! debugProbabilites && accumulatedProbability > 1 - minLoopProbability)
+		{
+			std::cout << "Debug break!!!!!" << std::endl;
+			break; // not possible anymore to find a frame with high enough probability
+		}
+	}
+	if (debugProbabilites)
+		printf("\n");
+
+	*out_loopID = -1;			// important !!!!!!!!
+	return;
+}
+
 
 bool FabMap::isValid() const
 {
