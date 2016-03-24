@@ -1,0 +1,3 @@
+/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/CMakeFiles/openFABMAP.dir
+/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles/use_fabmap.dir
+/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles/use_fabmap_video.dir

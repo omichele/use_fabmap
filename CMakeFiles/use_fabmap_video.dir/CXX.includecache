@@ -1,0 +1,60 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/src/FabMap.cpp
+FabMap.h
+/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/src/FabMap.h
+fstream
+-
+opencv2/core/core.hpp
+-
+opencv2/nonfree/features2d.hpp
+-
+
+/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/src/use_fabmap_video.cpp
+FabMap.h
+/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/src/FabMap.h
+dirent.h
+-
+unordered_map
+-
+utility
+-
+unistd.h
+-
+
+include/FabMap.h
+iostream
+-
+opencv2/core/core.hpp
+-
+opencv2/core/core_c.h
+-
+opencv2/highgui/highgui.hpp
+-
+opencv2/highgui/highgui_c.h
+-
+opencv2/imgproc/imgproc.hpp
+-
+openfabmap.hpp
+include/openfabmap.hpp
+
+openfabmap/include/openfabmap.hpp
+vector
+-
+list
+-
+map
+-
+set
+-
+valarray
+-
+opencv2/opencv.hpp
+-
+

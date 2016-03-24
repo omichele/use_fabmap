@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/include/openfabmap.hpp
+vector
+-
+list
+-
+map
+-
+set
+-
+valarray
+-
+opencv2/opencv.hpp
+-
+
+/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/src/BOWMSCTrainer.cpp
+../include/openfabmap.hpp
+/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/include/openfabmap.hpp
+
+/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/src/ChowLiuTree.cpp
+../include/openfabmap.hpp
+/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/include/openfabmap.hpp
+
+/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/src/FabMap.cpp
+../include/openfabmap.hpp
+/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/include/openfabmap.hpp
+
