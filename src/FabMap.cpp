@@ -159,6 +159,11 @@ void FabMap::compareAndAdd(cv::Mat frame, int* out_newID, int* out_loopID, cv::M
 	
 	float accumulatedProbability = 0;
 
+	int flag = 0;
+
+	double most_likely_place_prob = 0;
+
+
 	// #################### IMPORTANT  !!!!!!!!!!!!  #########################
 	const bool debugProbabilites = true;
 	int counter = 0;
@@ -179,41 +184,30 @@ void FabMap::compareAndAdd(cv::Mat frame, int* out_newID, int* out_loopID, cv::M
 			// std::cout << "Current processed image: " << *out_newID << std::endl;
 		}
 		
-		if(l->imgIdx < 0)
-		{
-			// Probability for new place:  index = -1
-			accumulatedProbability += l->match;
-			// std::cout << "New place probability!" << std::endl;
-		}
-		else
-		{
 			// Probability for existing place
-			if (l->match >= minLoopProbability && abs( *out_newID - counter - 2 ) >= 80)
+			if (l->match >= minLoopProbability && abs( *out_newID - counter - 2 ) >= 80 && l->match >= most_likely_place_prob)
 			{
 				*out_loopID = l->imgIdx;      // if a loop closure is detected
-				if (debugProbabilites){
-					std::cout << std::endl << "Match!!! Prob = "  << l->match << std::endl;
-					printf("\n");
-				}
 				// std::cout << std::endl << counter  << std::endl;
 				// std::cout << std::endl << abs( *out_newID -  counter )  << std::endl;
 				std::cout << std::endl << "Match!!! Prob = "  << l->match << std::endl;
 				printf("\n");
-				return;
+				most_likely_place_prob = l->match;
+				flag = 1;
 			}
-			accumulatedProbability += l->match;
-		}
 		
-		if (! debugProbabilites && accumulatedProbability > 1 - minLoopProbability)
-		{
-			std::cout << "Debug break!!!!!" << std::endl;
-			break; // not possible anymore to find a frame with high enough probability
-		}
+
 	}
 	if (debugProbabilites)
 		printf("\n");
 	
+	if(flag){
+	return;
+	}
+	else {
 	*out_loopID = -1;			// important !!!!!!!!
+	}
+
 	return;
 }
 
@@ -292,7 +286,6 @@ void FabMap::compareAndAdd(cv::Mat frame, int* out_newID, int* out_loopID)
 		else
 		{
 			// Probability for existing place
-			if (l->match >= minLoopProbability && abs( *out_newID - counter - 2 ) >= 80)
 			if (l->match >= minLoopProbability && abs( *out_newID - counter - 2 ) >= 80)
 			{
 				*out_loopID = l->imgIdx;      // if a loop closure is detected
