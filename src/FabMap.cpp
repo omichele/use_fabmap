@@ -16,7 +16,11 @@ FabMap::FabMap()
 	std::string fabmapTrainDataPath = packagePath + "openfabmap/trainingdata/StLuciaShortTraindata.yml";
 	std::string vocabPath = packagePath + "openfabmap/trainingdata/StLuciaShortVocabulary.yml";
 	std::string chowliutreePath = packagePath + "openfabmap/trainingdata/StLuciaShortTree.yml";
-	
+
+//	std::string fabmapTrainDataPath = packagePath + "openfabmap/trainingdata/new_college/train_data.yml";
+//	std::string vocabPath = packagePath + "openfabmap/trainingdata/new_college/vocab.yml";
+//	std::string chowliutreePath = packagePath + "openfabmap/trainingdata/new_college/tree.yml";
+
 	// Load training data
 	cv::FileStorage fsTraining;
 	fsTraining.open(fabmapTrainDataPath, cv::FileStorage::READ);
@@ -124,6 +128,7 @@ void FabMap::compareAndAdd(cv::Mat frame, int* out_newID, int* out_loopID, cv::M
 	}
 
 	cv::drawKeypoints(frame, kpts, kptsImg);
+	// drawRichKeypoints(frame, kpts, kptsImg);
 
 	kptsImg.copyTo(targetROI);
 
@@ -150,12 +155,12 @@ void FabMap::compareAndAdd(cv::Mat frame, int* out_newID, int* out_loopID, cv::M
 			confusionMat.at<float>(nextImageID-1, col) = l->match;
 		}
 	}
+
 	
-	const float minLoopProbability = 0.99f;
 	float accumulatedProbability = 0;
 
-	// #################### IMPORTANT  !!!!!!!!!!!!#########################
-	const bool debugProbabilites = false;
+	// #################### IMPORTANT  !!!!!!!!!!!!  #########################
+	const bool debugProbabilites = true;
 	int counter = 0;
 
 	if (debugProbabilites){
@@ -256,11 +261,10 @@ void FabMap::compareAndAdd(cv::Mat frame, int* out_newID, int* out_loopID)
 		}
 	}
 
-	const float minLoopProbability = 0.99f;
 	float accumulatedProbability = 0;
 
 	// #################### IMPORTANT  !!!!!!!!!!!!#########################
-	const bool debugProbabilites = false;
+	const bool debugProbabilites = true;
 	int counter = 0;
 
 	if (debugProbabilites){
@@ -288,13 +292,10 @@ void FabMap::compareAndAdd(cv::Mat frame, int* out_newID, int* out_loopID)
 		else
 		{
 			// Probability for existing place
+			if (std::max(l->match) >= minLoopProbability && abs( *out_newID - counter - 2 ) >= 80)
 			if (l->match >= minLoopProbability && abs( *out_newID - counter - 2 ) >= 80)
 			{
 				*out_loopID = l->imgIdx;      // if a loop closure is detected
-				if (debugProbabilites){
-					std::cout << std::endl << "Match!!! Prob = "  << l->match << std::endl;
-					printf("\n");
-				}
 				// std::cout << std::endl << counter  << std::endl;
 				// std::cout << std::endl << abs( *out_newID -  counter )  << std::endl;
 				std::cout << std::endl << "Match!!! Prob = "  << l->match << std::endl;
@@ -304,7 +305,7 @@ void FabMap::compareAndAdd(cv::Mat frame, int* out_newID, int* out_loopID)
 			accumulatedProbability += l->match;
 		}
 
-		if (! debugProbabilites && accumulatedProbability > 1 - minLoopProbability)
+		if ( !debugProbabilites && accumulatedProbability > 1 - minLoopProbability)
 		{
 			std::cout << "Debug break!!!!!" << std::endl;
 			break; // not possible anymore to find a frame with high enough probability
@@ -322,5 +323,84 @@ bool FabMap::isValid() const
 {
 	return valid;
 }
+
+}
+
+
+
+void drawRichKeypoints(const cv::Mat& src, std::vector<cv::KeyPoint>& kpts, cv::Mat& dst) {
+
+	cv::Mat grayFrame;
+	cvtColor(src, grayFrame, CV_RGB2GRAY);
+	cvtColor(grayFrame, dst, CV_GRAY2RGB);
+
+	if (kpts.size() == 0) {
+		return;
+	}
+
+	std::vector<cv::KeyPoint> kpts_cpy, kpts_sorted;
+
+	kpts_cpy.insert(kpts_cpy.end(), kpts.begin(), kpts.end());
+
+	double maxResponse = kpts_cpy.at(0).response;
+	double minResponse = kpts_cpy.at(0).response;
+
+	while (kpts_cpy.size() > 0) {
+
+		double maxR = 0.0;
+		unsigned int idx = 0;
+
+		for (unsigned int iii = 0; iii < kpts_cpy.size(); iii++) {
+
+			if (kpts_cpy.at(iii).response > maxR) {
+				maxR = kpts_cpy.at(iii).response;
+				idx = iii;
+			}
+
+			if (kpts_cpy.at(iii).response > maxResponse) {
+				maxResponse = kpts_cpy.at(iii).response;
+			}
+
+			if (kpts_cpy.at(iii).response < minResponse) {
+				minResponse = kpts_cpy.at(iii).response;
+			}
+		}
+
+		kpts_sorted.push_back(kpts_cpy.at(idx));
+		kpts_cpy.erase(kpts_cpy.begin() + idx);
+
+	}
+
+	int thickness = 1;
+	cv::Point center;
+	cv::Scalar colour;
+	int red = 0, blue = 0, green = 0;
+	int radius;
+	double normalizedScore;
+
+	if (minResponse == maxResponse) {
+		colour = CV_RGB(255, 0, 0);
+	}
+
+    for (int iii = (int)kpts_sorted.size()-1; iii >= 0; iii--) {
+
+		if (minResponse != maxResponse) {
+			normalizedScore = pow((kpts_sorted.at(iii).response - minResponse) / (maxResponse - minResponse), 0.25);
+			red = int(255.0 * normalizedScore);
+			green = int(255.0 - 255.0 * normalizedScore);
+			colour = CV_RGB(red, green, blue);
+		}
+
+		center = kpts_sorted.at(iii).pt;
+        center.x *= 16;
+        center.y *= 16;
+
+        radius = (int)(16.0 * ((double)(kpts_sorted.at(iii).size)/2.0));
+
+        if (radius > 0) {
+            circle(dst, center, radius, colour, thickness, CV_AA, 4);
+        }
+
+	}
 
 }

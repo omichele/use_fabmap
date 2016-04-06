@@ -51,6 +51,7 @@ SET(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 SET(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/use_fabmap.dir/DependInfo.cmake"
-  "CMakeFiles/use_fabmap_video.dir/DependInfo.cmake"
+  "CMakeFiles/use_fabmap_video_city_centre.dir/DependInfo.cmake"
+  "CMakeFiles/use_fabmap_video_st_lucia.dir/DependInfo.cmake"
   "openfabmap/CMakeFiles/openFABMAP.dir/DependInfo.cmake"
   )

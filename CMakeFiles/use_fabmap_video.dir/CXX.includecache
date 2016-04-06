@@ -16,18 +16,6 @@ opencv2/core/core.hpp
 opencv2/nonfree/features2d.hpp
 -
 
-/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/src/use_fabmap_video.cpp
-FabMap.h
-/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/src/FabMap.h
-dirent.h
--
-unordered_map
--
-utility
--
-unistd.h
--
-
 include/FabMap.h
 iostream
 -

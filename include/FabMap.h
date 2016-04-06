@@ -45,6 +45,8 @@ public:
 	
 	void compareAndAdd(cv::Mat keyframe, int* out_newID, int* out_loopID);
 
+	void drawRichKeypoints(const cv::Mat& src, std::vector<cv::KeyPoint>& kpts, cv::Mat& dst);
+
 	/** Returns if the class is initialized correctly (i.e. if the required
 	 *  files could be loaded). */
 	bool isValid() const;
@@ -59,6 +61,9 @@ private:
 	cv::Mat confusionMat;
 	
 	bool valid;
+
+	const float minLoopProbability = 0.99f;
+
 };
 
 }

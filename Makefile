@@ -112,17 +112,30 @@ use_fabmap/fast:
 .PHONY : use_fabmap/fast
 
 #=============================================================================
-# Target rules for targets named use_fabmap_video
+# Target rules for targets named use_fabmap_video_city_centre
 
 # Build rule for target.
-use_fabmap_video: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 use_fabmap_video
-.PHONY : use_fabmap_video
+use_fabmap_video_city_centre: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 use_fabmap_video_city_centre
+.PHONY : use_fabmap_video_city_centre
 
 # fast build rule for target.
-use_fabmap_video/fast:
-	$(MAKE) -f CMakeFiles/use_fabmap_video.dir/build.make CMakeFiles/use_fabmap_video.dir/build
-.PHONY : use_fabmap_video/fast
+use_fabmap_video_city_centre/fast:
+	$(MAKE) -f CMakeFiles/use_fabmap_video_city_centre.dir/build.make CMakeFiles/use_fabmap_video_city_centre.dir/build
+.PHONY : use_fabmap_video_city_centre/fast
+
+#=============================================================================
+# Target rules for targets named use_fabmap_video_st_lucia
+
+# Build rule for target.
+use_fabmap_video_st_lucia: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 use_fabmap_video_st_lucia
+.PHONY : use_fabmap_video_st_lucia
+
+# fast build rule for target.
+use_fabmap_video_st_lucia/fast:
+	$(MAKE) -f CMakeFiles/use_fabmap_video_st_lucia.dir/build.make CMakeFiles/use_fabmap_video_st_lucia.dir/build
+.PHONY : use_fabmap_video_st_lucia/fast
 
 #=============================================================================
 # Target rules for targets named openFABMAP
@@ -143,7 +156,8 @@ src/FabMap.o: src/FabMap.cpp.o
 # target to build an object file
 src/FabMap.cpp.o:
 	$(MAKE) -f CMakeFiles/use_fabmap.dir/build.make CMakeFiles/use_fabmap.dir/src/FabMap.cpp.o
-	$(MAKE) -f CMakeFiles/use_fabmap_video.dir/build.make CMakeFiles/use_fabmap_video.dir/src/FabMap.cpp.o
+	$(MAKE) -f CMakeFiles/use_fabmap_video_city_centre.dir/build.make CMakeFiles/use_fabmap_video_city_centre.dir/src/FabMap.cpp.o
+	$(MAKE) -f CMakeFiles/use_fabmap_video_st_lucia.dir/build.make CMakeFiles/use_fabmap_video_st_lucia.dir/src/FabMap.cpp.o
 .PHONY : src/FabMap.cpp.o
 
 src/FabMap.i: src/FabMap.cpp.i
@@ -152,7 +166,8 @@ src/FabMap.i: src/FabMap.cpp.i
 # target to preprocess a source file
 src/FabMap.cpp.i:
 	$(MAKE) -f CMakeFiles/use_fabmap.dir/build.make CMakeFiles/use_fabmap.dir/src/FabMap.cpp.i
-	$(MAKE) -f CMakeFiles/use_fabmap_video.dir/build.make CMakeFiles/use_fabmap_video.dir/src/FabMap.cpp.i
+	$(MAKE) -f CMakeFiles/use_fabmap_video_city_centre.dir/build.make CMakeFiles/use_fabmap_video_city_centre.dir/src/FabMap.cpp.i
+	$(MAKE) -f CMakeFiles/use_fabmap_video_st_lucia.dir/build.make CMakeFiles/use_fabmap_video_st_lucia.dir/src/FabMap.cpp.i
 .PHONY : src/FabMap.cpp.i
 
 src/FabMap.s: src/FabMap.cpp.s
@@ -161,7 +176,8 @@ src/FabMap.s: src/FabMap.cpp.s
 # target to generate assembly for a file
 src/FabMap.cpp.s:
 	$(MAKE) -f CMakeFiles/use_fabmap.dir/build.make CMakeFiles/use_fabmap.dir/src/FabMap.cpp.s
-	$(MAKE) -f CMakeFiles/use_fabmap_video.dir/build.make CMakeFiles/use_fabmap_video.dir/src/FabMap.cpp.s
+	$(MAKE) -f CMakeFiles/use_fabmap_video_city_centre.dir/build.make CMakeFiles/use_fabmap_video_city_centre.dir/src/FabMap.cpp.s
+	$(MAKE) -f CMakeFiles/use_fabmap_video_st_lucia.dir/build.make CMakeFiles/use_fabmap_video_st_lucia.dir/src/FabMap.cpp.s
 .PHONY : src/FabMap.cpp.s
 
 src/use_fabmap.o: src/use_fabmap.cpp.o
@@ -188,29 +204,53 @@ src/use_fabmap.cpp.s:
 	$(MAKE) -f CMakeFiles/use_fabmap.dir/build.make CMakeFiles/use_fabmap.dir/src/use_fabmap.cpp.s
 .PHONY : src/use_fabmap.cpp.s
 
-src/use_fabmap_video.o: src/use_fabmap_video.cpp.o
-.PHONY : src/use_fabmap_video.o
+src/use_fabmap_video_city_center.o: src/use_fabmap_video_city_center.cpp.o
+.PHONY : src/use_fabmap_video_city_center.o
 
 # target to build an object file
-src/use_fabmap_video.cpp.o:
-	$(MAKE) -f CMakeFiles/use_fabmap_video.dir/build.make CMakeFiles/use_fabmap_video.dir/src/use_fabmap_video.cpp.o
-.PHONY : src/use_fabmap_video.cpp.o
+src/use_fabmap_video_city_center.cpp.o:
+	$(MAKE) -f CMakeFiles/use_fabmap_video_city_centre.dir/build.make CMakeFiles/use_fabmap_video_city_centre.dir/src/use_fabmap_video_city_center.cpp.o
+.PHONY : src/use_fabmap_video_city_center.cpp.o
 
-src/use_fabmap_video.i: src/use_fabmap_video.cpp.i
-.PHONY : src/use_fabmap_video.i
+src/use_fabmap_video_city_center.i: src/use_fabmap_video_city_center.cpp.i
+.PHONY : src/use_fabmap_video_city_center.i
 
 # target to preprocess a source file
-src/use_fabmap_video.cpp.i:
-	$(MAKE) -f CMakeFiles/use_fabmap_video.dir/build.make CMakeFiles/use_fabmap_video.dir/src/use_fabmap_video.cpp.i
-.PHONY : src/use_fabmap_video.cpp.i
+src/use_fabmap_video_city_center.cpp.i:
+	$(MAKE) -f CMakeFiles/use_fabmap_video_city_centre.dir/build.make CMakeFiles/use_fabmap_video_city_centre.dir/src/use_fabmap_video_city_center.cpp.i
+.PHONY : src/use_fabmap_video_city_center.cpp.i
 
-src/use_fabmap_video.s: src/use_fabmap_video.cpp.s
-.PHONY : src/use_fabmap_video.s
+src/use_fabmap_video_city_center.s: src/use_fabmap_video_city_center.cpp.s
+.PHONY : src/use_fabmap_video_city_center.s
 
 # target to generate assembly for a file
-src/use_fabmap_video.cpp.s:
-	$(MAKE) -f CMakeFiles/use_fabmap_video.dir/build.make CMakeFiles/use_fabmap_video.dir/src/use_fabmap_video.cpp.s
-.PHONY : src/use_fabmap_video.cpp.s
+src/use_fabmap_video_city_center.cpp.s:
+	$(MAKE) -f CMakeFiles/use_fabmap_video_city_centre.dir/build.make CMakeFiles/use_fabmap_video_city_centre.dir/src/use_fabmap_video_city_center.cpp.s
+.PHONY : src/use_fabmap_video_city_center.cpp.s
+
+src/use_fabmap_video_st_lucia.o: src/use_fabmap_video_st_lucia.cpp.o
+.PHONY : src/use_fabmap_video_st_lucia.o
+
+# target to build an object file
+src/use_fabmap_video_st_lucia.cpp.o:
+	$(MAKE) -f CMakeFiles/use_fabmap_video_st_lucia.dir/build.make CMakeFiles/use_fabmap_video_st_lucia.dir/src/use_fabmap_video_st_lucia.cpp.o
+.PHONY : src/use_fabmap_video_st_lucia.cpp.o
+
+src/use_fabmap_video_st_lucia.i: src/use_fabmap_video_st_lucia.cpp.i
+.PHONY : src/use_fabmap_video_st_lucia.i
+
+# target to preprocess a source file
+src/use_fabmap_video_st_lucia.cpp.i:
+	$(MAKE) -f CMakeFiles/use_fabmap_video_st_lucia.dir/build.make CMakeFiles/use_fabmap_video_st_lucia.dir/src/use_fabmap_video_st_lucia.cpp.i
+.PHONY : src/use_fabmap_video_st_lucia.cpp.i
+
+src/use_fabmap_video_st_lucia.s: src/use_fabmap_video_st_lucia.cpp.s
+.PHONY : src/use_fabmap_video_st_lucia.s
+
+# target to generate assembly for a file
+src/use_fabmap_video_st_lucia.cpp.s:
+	$(MAKE) -f CMakeFiles/use_fabmap_video_st_lucia.dir/build.make CMakeFiles/use_fabmap_video_st_lucia.dir/src/use_fabmap_video_st_lucia.cpp.s
+.PHONY : src/use_fabmap_video_st_lucia.cpp.s
 
 # Help Target
 help:
@@ -221,7 +261,8 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... use_fabmap"
-	@echo "... use_fabmap_video"
+	@echo "... use_fabmap_video_city_centre"
+	@echo "... use_fabmap_video_st_lucia"
 	@echo "... openFABMAP"
 	@echo "... src/FabMap.o"
 	@echo "... src/FabMap.i"
@@ -229,9 +270,12 @@ help:
 	@echo "... src/use_fabmap.o"
 	@echo "... src/use_fabmap.i"
 	@echo "... src/use_fabmap.s"
-	@echo "... src/use_fabmap_video.o"
-	@echo "... src/use_fabmap_video.i"
-	@echo "... src/use_fabmap_video.s"
+	@echo "... src/use_fabmap_video_city_center.o"
+	@echo "... src/use_fabmap_video_city_center.i"
+	@echo "... src/use_fabmap_video_city_center.s"
+	@echo "... src/use_fabmap_video_st_lucia.o"
+	@echo "... src/use_fabmap_video_st_lucia.i"
+	@echo "... src/use_fabmap_video_st_lucia.s"
 .PHONY : help
 
 

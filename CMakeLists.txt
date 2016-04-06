@@ -96,9 +96,13 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 # Tell cmake about the binary
 add_executable(use_fabmap ${CMAKE_SOURCE_DIR}/src/use_fabmap.cpp ${CMAKE_SOURCE_DIR}/src/FabMap.cpp)
 
-add_executable(use_fabmap_video ${CMAKE_SOURCE_DIR}/src/use_fabmap_video.cpp ${CMAKE_SOURCE_DIR}/src/FabMap.cpp)
+add_executable(use_fabmap_video_st_lucia ${CMAKE_SOURCE_DIR}/src/use_fabmap_video_st_lucia.cpp ${CMAKE_SOURCE_DIR}/src/FabMap.cpp)
+
+add_executable(use_fabmap_video_city_centre ${CMAKE_SOURCE_DIR}/src/use_fabmap_video_city_center.cpp ${CMAKE_SOURCE_DIR}/src/FabMap.cpp)
 
 # Tell openFABMAPcli to link against its required libs
 target_link_libraries(use_fabmap ${FABMAP_LIB} ${OpenCV_LIBS} )
 
-target_link_libraries(use_fabmap_video ${FABMAP_LIB} ${OpenCV_LIBS} )
+target_link_libraries(use_fabmap_video_st_lucia ${FABMAP_LIB} ${OpenCV_LIBS} )
+
+target_link_libraries(use_fabmap_video_city_centre ${FABMAP_LIB} ${OpenCV_LIBS} )

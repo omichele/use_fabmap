@@ -88,38 +88,73 @@ clean: CMakeFiles/use_fabmap.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/use_fabmap_video.dir
+# Target rules for target CMakeFiles/use_fabmap_video_city_centre.dir
 
 # All Build rule for target.
-CMakeFiles/use_fabmap_video.dir/all: openfabmap/CMakeFiles/openFABMAP.dir/all
-	$(MAKE) -f CMakeFiles/use_fabmap_video.dir/build.make CMakeFiles/use_fabmap_video.dir/depend
-	$(MAKE) -f CMakeFiles/use_fabmap_video.dir/build.make CMakeFiles/use_fabmap_video.dir/build
+CMakeFiles/use_fabmap_video_city_centre.dir/all: openfabmap/CMakeFiles/openFABMAP.dir/all
+	$(MAKE) -f CMakeFiles/use_fabmap_video_city_centre.dir/build.make CMakeFiles/use_fabmap_video_city_centre.dir/depend
+	$(MAKE) -f CMakeFiles/use_fabmap_video_city_centre.dir/build.make CMakeFiles/use_fabmap_video_city_centre.dir/build
 	$(CMAKE_COMMAND) -E cmake_progress_report "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles"  6 7
-	@echo "Built target use_fabmap_video"
-.PHONY : CMakeFiles/use_fabmap_video.dir/all
+	@echo "Built target use_fabmap_video_city_centre"
+.PHONY : CMakeFiles/use_fabmap_video_city_centre.dir/all
 
 # Include target in all.
-all: CMakeFiles/use_fabmap_video.dir/all
+all: CMakeFiles/use_fabmap_video_city_centre.dir/all
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/use_fabmap_video.dir/rule: cmake_check_build_system
+CMakeFiles/use_fabmap_video_city_centre.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles" 5
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/use_fabmap_video.dir/all
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/use_fabmap_video_city_centre.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles" 0
-.PHONY : CMakeFiles/use_fabmap_video.dir/rule
+.PHONY : CMakeFiles/use_fabmap_video_city_centre.dir/rule
 
 # Convenience name for target.
-use_fabmap_video: CMakeFiles/use_fabmap_video.dir/rule
-.PHONY : use_fabmap_video
+use_fabmap_video_city_centre: CMakeFiles/use_fabmap_video_city_centre.dir/rule
+.PHONY : use_fabmap_video_city_centre
 
 # clean rule for target.
-CMakeFiles/use_fabmap_video.dir/clean:
-	$(MAKE) -f CMakeFiles/use_fabmap_video.dir/build.make CMakeFiles/use_fabmap_video.dir/clean
-.PHONY : CMakeFiles/use_fabmap_video.dir/clean
+CMakeFiles/use_fabmap_video_city_centre.dir/clean:
+	$(MAKE) -f CMakeFiles/use_fabmap_video_city_centre.dir/build.make CMakeFiles/use_fabmap_video_city_centre.dir/clean
+.PHONY : CMakeFiles/use_fabmap_video_city_centre.dir/clean
 
 # clean rule for target.
-clean: CMakeFiles/use_fabmap_video.dir/clean
+clean: CMakeFiles/use_fabmap_video_city_centre.dir/clean
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/use_fabmap_video_st_lucia.dir
+
+# All Build rule for target.
+CMakeFiles/use_fabmap_video_st_lucia.dir/all: openfabmap/CMakeFiles/openFABMAP.dir/all
+	$(MAKE) -f CMakeFiles/use_fabmap_video_st_lucia.dir/build.make CMakeFiles/use_fabmap_video_st_lucia.dir/depend
+	$(MAKE) -f CMakeFiles/use_fabmap_video_st_lucia.dir/build.make CMakeFiles/use_fabmap_video_st_lucia.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles"  8 9
+	@echo "Built target use_fabmap_video_st_lucia"
+.PHONY : CMakeFiles/use_fabmap_video_st_lucia.dir/all
+
+# Include target in all.
+all: CMakeFiles/use_fabmap_video_st_lucia.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/use_fabmap_video_st_lucia.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles" 5
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/use_fabmap_video_st_lucia.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles" 0
+.PHONY : CMakeFiles/use_fabmap_video_st_lucia.dir/rule
+
+# Convenience name for target.
+use_fabmap_video_st_lucia: CMakeFiles/use_fabmap_video_st_lucia.dir/rule
+.PHONY : use_fabmap_video_st_lucia
+
+# clean rule for target.
+CMakeFiles/use_fabmap_video_st_lucia.dir/clean:
+	$(MAKE) -f CMakeFiles/use_fabmap_video_st_lucia.dir/build.make CMakeFiles/use_fabmap_video_st_lucia.dir/clean
+.PHONY : CMakeFiles/use_fabmap_video_st_lucia.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/use_fabmap_video_st_lucia.dir/clean
 .PHONY : clean
 
 #=============================================================================

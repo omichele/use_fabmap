@@ -6,3 +6,4 @@
 ./bin/use_fabmap '/media/michele/SAMSUNG/miche/files/stlucia/Data/101215_153851_MultiCamera0'
 ./bin/use_fabmap_video '/media/michele/SAMSUNG/miche/files/stlucia/101215_153851_MultiCamera0_deb' 'cam0_image%05d.bmp'
 ./bin/use_fabmap_video '/home/michele/Documents/master thesis/datasets/new_college/Images' '%04d.jpg'
+./bin/use_fabmap_video '/home/michele/Documents/master thesis/datasets/city_centre/Images/Images' '%04d.jpg'
