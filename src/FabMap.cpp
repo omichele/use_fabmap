@@ -292,7 +292,7 @@ void FabMap::compareAndAdd(cv::Mat frame, int* out_newID, int* out_loopID)
 		else
 		{
 			// Probability for existing place
-			if (std::max(l->match) >= minLoopProbability && abs( *out_newID - counter - 2 ) >= 80)
+			if (l->match >= minLoopProbability && abs( *out_newID - counter - 2 ) >= 80)
 			if (l->match >= minLoopProbability && abs( *out_newID - counter - 2 ) >= 80)
 			{
 				*out_loopID = l->imgIdx;      // if a loop closure is detected
