@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+   <FileVersion major="1" minor="6" />
+   <Project>
+      <Option title="openFABMAP" />
+      <Option makefile_is_custom="1" />
+      <Option compiler="gcc" />
+      <Option virtualFolders="CMake Files\;CMake Files\openfabmap\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\;CMake Files\..\..\..\..\..\..\..\usr\;CMake Files\..\..\..\..\..\..\..\usr\share\;CMake Files\..\..\..\..\..\..\..\usr\share\OpenCV\;" />
+      <Build>
+      <Target title="all">
+         <Option working_dir="/media/michele/Data/miche/file temporanei/DOCUMENTI MIEI/lavori università/robotics/master thesis/softwares/workspace/use_fabmap/openfabmap" />
+         <Option type="4" />
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/media/michele/Data/miche/file\ temporanei/DOCUMENTI\ MIEI/lavori\ università/robotics/master\ thesis/softwares/workspace/use_fabmap/openfabmap/Makefile&quot;  VERBOSE=1 all" />
+            <CompileFile command="/usr/bin/make -f &quot;/media/michele/Data/miche/file\ temporanei/DOCUMENTI\ MIEI/lavori\ università/robotics/master\ thesis/softwares/workspace/use_fabmap/openfabmap/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/media/michele/Data/miche/file\ temporanei/DOCUMENTI\ MIEI/lavori\ università/robotics/master\ thesis/softwares/workspace/use_fabmap/openfabmap/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/media/michele/Data/miche/file\ temporanei/DOCUMENTI\ MIEI/lavori\ università/robotics/master\ thesis/softwares/workspace/use_fabmap/openfabmap/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="openFABMAP">
+         <Option output="/media/michele/Data/miche/file temporanei/DOCUMENTI MIEI/lavori università/robotics/master thesis/softwares/workspace/use_fabmap/lib/libopenFABMAP.so" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/media/michele/Data/miche/file temporanei/DOCUMENTI MIEI/lavori università/robotics/master thesis/softwares/workspace/use_fabmap/openfabmap" />
+         <Option object_output="./" />
+         <Option type="3" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DOPENCV2P4" />
+            <Add directory="/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/include" />
+            <Add directory="/usr/include/opencv" />
+            <Add directory="/usr/include/opencv2" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/media/michele/Data/miche/file\ temporanei/DOCUMENTI\ MIEI/lavori\ università/robotics/master\ thesis/softwares/workspace/use_fabmap/openfabmap/Makefile&quot;  VERBOSE=1 openFABMAP" />
+            <CompileFile command="/usr/bin/make -f &quot;/media/michele/Data/miche/file\ temporanei/DOCUMENTI\ MIEI/lavori\ università/robotics/master\ thesis/softwares/workspace/use_fabmap/openfabmap/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/media/michele/Data/miche/file\ temporanei/DOCUMENTI\ MIEI/lavori\ università/robotics/master\ thesis/softwares/workspace/use_fabmap/openfabmap/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/media/michele/Data/miche/file\ temporanei/DOCUMENTI\ MIEI/lavori\ università/robotics/master\ thesis/softwares/workspace/use_fabmap/openfabmap/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      <Target title="openFABMAP/fast">
+         <Option output="/media/michele/Data/miche/file temporanei/DOCUMENTI MIEI/lavori università/robotics/master thesis/softwares/workspace/use_fabmap/lib/libopenFABMAP.so" prefix_auto="0" extension_auto="0" />
+         <Option working_dir="/media/michele/Data/miche/file temporanei/DOCUMENTI MIEI/lavori università/robotics/master thesis/softwares/workspace/use_fabmap/openfabmap" />
+         <Option object_output="./" />
+         <Option type="3" />
+         <Option compiler="gcc" />
+         <Compiler>
+            <Add option="-DOPENCV2P4" />
+            <Add directory="/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/include" />
+            <Add directory="/usr/include/opencv" />
+            <Add directory="/usr/include/opencv2" />
+         </Compiler>
+         <MakeCommands>
+            <Build command="/usr/bin/make -f &quot;/media/michele/Data/miche/file\ temporanei/DOCUMENTI\ MIEI/lavori\ università/robotics/master\ thesis/softwares/workspace/use_fabmap/openfabmap/Makefile&quot;  VERBOSE=1 openFABMAP/fast" />
+            <CompileFile command="/usr/bin/make -f &quot;/media/michele/Data/miche/file\ temporanei/DOCUMENTI\ MIEI/lavori\ università/robotics/master\ thesis/softwares/workspace/use_fabmap/openfabmap/Makefile&quot;  VERBOSE=1 &quot;$file&quot;" />
+            <Clean command="/usr/bin/make -f &quot;/media/michele/Data/miche/file\ temporanei/DOCUMENTI\ MIEI/lavori\ università/robotics/master\ thesis/softwares/workspace/use_fabmap/openfabmap/Makefile&quot;  VERBOSE=1 clean" />
+            <DistClean command="/usr/bin/make -f &quot;/media/michele/Data/miche/file\ temporanei/DOCUMENTI\ MIEI/lavori\ università/robotics/master\ thesis/softwares/workspace/use_fabmap/openfabmap/Makefile&quot;  VERBOSE=1 clean" />
+         </MakeCommands>
+      </Target>
+      </Build>
+      <Unit filename="/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/src/BOWMSCTrainer.cpp">
+      </Unit>
+      <Unit filename="/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/src/ChowLiuTree.cpp">
+      </Unit>
+      <Unit filename="/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/src/FabMap.cpp">
+      </Unit>
+      <Unit filename="/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/include/openfabmap.hpp">
+      </Unit>
+      <Unit filename="/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\" />
+      </Unit>
+      <Unit filename="/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\openfabmap\" />
+      </Unit>
+      <Unit filename="/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/FindOpenCV.cmake">
+          <Option virtualFolder="CMake Files\openfabmap\" />
+      </Unit>
+      <Unit filename="/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/CMakeLists.txt">
+          <Option virtualFolder="CMake Files\openfabmap\" />
+      </Unit>
+      <Unit filename="/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/FindOpenCV.cmake">
+          <Option virtualFolder="CMake Files\openfabmap\" />
+      </Unit>
+      <Unit filename="/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/../../../../../../../usr/share/OpenCV/OpenCVConfig-version.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\share\OpenCV\" />
+      </Unit>
+      <Unit filename="/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/../../../../../../../usr/share/OpenCV/OpenCVConfig.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\share\OpenCV\" />
+      </Unit>
+      <Unit filename="/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/../../../../../../../usr/share/OpenCV/OpenCVModules.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\share\OpenCV\" />
+      </Unit>
+      <Unit filename="/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/../../../../../../../usr/share/OpenCV/OpenCVModules-release.cmake">
+          <Option virtualFolder="CMake Files\..\..\..\..\..\..\..\usr\share\OpenCV\" />
+      </Unit>
+   </Project>
+</CodeBlocks_project_file>
