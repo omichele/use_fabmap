@@ -1,4 +1,4 @@
-project(openFABMAP)
+project(use_fabmap)
 
 cmake_minimum_required(VERSION 2.6)
 
@@ -100,9 +100,13 @@ add_executable(use_fabmap_video_st_lucia ${CMAKE_SOURCE_DIR}/src/use_fabmap_vide
 
 add_executable(use_fabmap_video_city_centre ${CMAKE_SOURCE_DIR}/src/use_fabmap_video_city_center.cpp ${CMAKE_SOURCE_DIR}/src/FabMap.cpp)
 
+add_executable(use_fabmap_video_mono ${CMAKE_SOURCE_DIR}/src/use_fabmap_video_mono.cpp ${CMAKE_SOURCE_DIR}/src/FabMap.cpp)
+
 # Tell openFABMAPcli to link against its required libs
 target_link_libraries(use_fabmap ${FABMAP_LIB} ${OpenCV_LIBS} )
 
 target_link_libraries(use_fabmap_video_st_lucia ${FABMAP_LIB} ${OpenCV_LIBS} )
 
 target_link_libraries(use_fabmap_video_city_centre ${FABMAP_LIB} ${OpenCV_LIBS} )
+
+target_link_libraries(use_fabmap_video_mono ${FABMAP_LIB} ${OpenCV_LIBS} )

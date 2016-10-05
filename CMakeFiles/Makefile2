@@ -50,7 +50,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap"
+CMAKE_BINARY_DIR = /home/michele/Documents/workspace/use_fabmap
 
 #=============================================================================
 # Target rules for target CMakeFiles/use_fabmap.dir
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = "/home/michele/Documents/master thesis/softwares/workspace/us
 CMakeFiles/use_fabmap.dir/all: openfabmap/CMakeFiles/openFABMAP.dir/all
 	$(MAKE) -f CMakeFiles/use_fabmap.dir/build.make CMakeFiles/use_fabmap.dir/depend
 	$(MAKE) -f CMakeFiles/use_fabmap.dir/build.make CMakeFiles/use_fabmap.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles"  4 5
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/michele/Documents/workspace/use_fabmap/CMakeFiles  4 5
 	@echo "Built target use_fabmap"
 .PHONY : CMakeFiles/use_fabmap.dir/all
 
@@ -69,9 +69,9 @@ all: CMakeFiles/use_fabmap.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/use_fabmap.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles" 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/michele/Documents/workspace/use_fabmap/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/use_fabmap.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/michele/Documents/workspace/use_fabmap/CMakeFiles 0
 .PHONY : CMakeFiles/use_fabmap.dir/rule
 
 # Convenience name for target.
@@ -94,7 +94,7 @@ clean: CMakeFiles/use_fabmap.dir/clean
 CMakeFiles/use_fabmap_video_city_centre.dir/all: openfabmap/CMakeFiles/openFABMAP.dir/all
 	$(MAKE) -f CMakeFiles/use_fabmap_video_city_centre.dir/build.make CMakeFiles/use_fabmap_video_city_centre.dir/depend
 	$(MAKE) -f CMakeFiles/use_fabmap_video_city_centre.dir/build.make CMakeFiles/use_fabmap_video_city_centre.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles"  6 7
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/michele/Documents/workspace/use_fabmap/CMakeFiles  6 7
 	@echo "Built target use_fabmap_video_city_centre"
 .PHONY : CMakeFiles/use_fabmap_video_city_centre.dir/all
 
@@ -104,9 +104,9 @@ all: CMakeFiles/use_fabmap_video_city_centre.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/use_fabmap_video_city_centre.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles" 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/michele/Documents/workspace/use_fabmap/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/use_fabmap_video_city_centre.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/michele/Documents/workspace/use_fabmap/CMakeFiles 0
 .PHONY : CMakeFiles/use_fabmap_video_city_centre.dir/rule
 
 # Convenience name for target.
@@ -123,13 +123,48 @@ clean: CMakeFiles/use_fabmap_video_city_centre.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/use_fabmap_video_mono.dir
+
+# All Build rule for target.
+CMakeFiles/use_fabmap_video_mono.dir/all: openfabmap/CMakeFiles/openFABMAP.dir/all
+	$(MAKE) -f CMakeFiles/use_fabmap_video_mono.dir/build.make CMakeFiles/use_fabmap_video_mono.dir/depend
+	$(MAKE) -f CMakeFiles/use_fabmap_video_mono.dir/build.make CMakeFiles/use_fabmap_video_mono.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/michele/Documents/workspace/use_fabmap/CMakeFiles  8 9
+	@echo "Built target use_fabmap_video_mono"
+.PHONY : CMakeFiles/use_fabmap_video_mono.dir/all
+
+# Include target in all.
+all: CMakeFiles/use_fabmap_video_mono.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/use_fabmap_video_mono.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/michele/Documents/workspace/use_fabmap/CMakeFiles 5
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/use_fabmap_video_mono.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/michele/Documents/workspace/use_fabmap/CMakeFiles 0
+.PHONY : CMakeFiles/use_fabmap_video_mono.dir/rule
+
+# Convenience name for target.
+use_fabmap_video_mono: CMakeFiles/use_fabmap_video_mono.dir/rule
+.PHONY : use_fabmap_video_mono
+
+# clean rule for target.
+CMakeFiles/use_fabmap_video_mono.dir/clean:
+	$(MAKE) -f CMakeFiles/use_fabmap_video_mono.dir/build.make CMakeFiles/use_fabmap_video_mono.dir/clean
+.PHONY : CMakeFiles/use_fabmap_video_mono.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/use_fabmap_video_mono.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/use_fabmap_video_st_lucia.dir
 
 # All Build rule for target.
 CMakeFiles/use_fabmap_video_st_lucia.dir/all: openfabmap/CMakeFiles/openFABMAP.dir/all
 	$(MAKE) -f CMakeFiles/use_fabmap_video_st_lucia.dir/build.make CMakeFiles/use_fabmap_video_st_lucia.dir/depend
 	$(MAKE) -f CMakeFiles/use_fabmap_video_st_lucia.dir/build.make CMakeFiles/use_fabmap_video_st_lucia.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles"  8 9
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/michele/Documents/workspace/use_fabmap/CMakeFiles  10 11
 	@echo "Built target use_fabmap_video_st_lucia"
 .PHONY : CMakeFiles/use_fabmap_video_st_lucia.dir/all
 
@@ -139,9 +174,9 @@ all: CMakeFiles/use_fabmap_video_st_lucia.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/use_fabmap_video_st_lucia.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles" 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/michele/Documents/workspace/use_fabmap/CMakeFiles 5
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/use_fabmap_video_st_lucia.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/michele/Documents/workspace/use_fabmap/CMakeFiles 0
 .PHONY : CMakeFiles/use_fabmap_video_st_lucia.dir/rule
 
 # Convenience name for target.
@@ -179,7 +214,7 @@ openfabmap/preinstall:
 openfabmap/CMakeFiles/openFABMAP.dir/all:
 	$(MAKE) -f openfabmap/CMakeFiles/openFABMAP.dir/build.make openfabmap/CMakeFiles/openFABMAP.dir/depend
 	$(MAKE) -f openfabmap/CMakeFiles/openFABMAP.dir/build.make openfabmap/CMakeFiles/openFABMAP.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles"  1 2 3
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/michele/Documents/workspace/use_fabmap/CMakeFiles  1 2 3
 	@echo "Built target openFABMAP"
 .PHONY : openfabmap/CMakeFiles/openFABMAP.dir/all
 
@@ -189,9 +224,9 @@ all: openfabmap/CMakeFiles/openFABMAP.dir/all
 
 # Build rule for subdir invocation for target.
 openfabmap/CMakeFiles/openFABMAP.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles" 3
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/michele/Documents/workspace/use_fabmap/CMakeFiles 3
 	$(MAKE) -f CMakeFiles/Makefile2 openfabmap/CMakeFiles/openFABMAP.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/michele/Documents/workspace/use_fabmap/CMakeFiles 0
 .PHONY : openfabmap/CMakeFiles/openFABMAP.dir/rule
 
 # Convenience name for target.

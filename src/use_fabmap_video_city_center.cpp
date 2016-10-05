@@ -32,9 +32,9 @@ int main(int argc, char * argv[])
 	cout << "Directory chosen: " << dirName << endl;
 	cout << "Directory chosen: " << dirName.c_str() << endl;
 
-	cv::VideoCapture sequence0(dirName + "/" + imageName0);
+	cv::VideoCapture sequence0(dirName + "/" + imageName0);     // sequence for the right camera
 
-	cv::VideoCapture sequence1(dirName + "/" + imageName0);
+	cv::VideoCapture sequence1(dirName + "/" + imageName0);     // sequence for the left camera
 
 //	if( argc == 3){
 //		string imageName1 = argv[3];
@@ -54,7 +54,7 @@ int main(int argc, char * argv[])
 
 	sequence1 >> img1;
 
-	sequence1 >> img1;
+	sequence1 >> img1;       // left image start at the second image and 2,4,6,8
 
 	// cout << "Image type: " << img0.type() << endl;
 
@@ -94,11 +94,11 @@ int main(int argc, char * argv[])
 	for(;;){
 		sequence0 >> img0;
 
-		sequence0 >> img0;
+		sequence0 >> img0;    // 3, 5,7,9...
 
 		sequence1 >> img1;
 
-		sequence1 >> img1;
+		sequence1 >> img1;    // 4, 6, 8, ...
 
 		if(! img0.data )                              // Check for invalid input
 		{

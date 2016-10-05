@@ -5,7 +5,7 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/highgui/highgui_c.h>
 #include <opencv2/imgproc/imgproc.hpp>
-
+// connection to openFABMAP
 #include "openfabmap.hpp"
 
 namespace of2 {
@@ -41,7 +41,7 @@ public:
 // 	int compare(KeyFrame* keyframe);
 
 	/** Combination of compare() followed by add() (more efficient). */
-	void compareAndAdd(cv::Mat keyframe, int* out_newID, int* out_loopID, cv::Mat targetROI);
+	double compareAndAdd(cv::Mat keyframe, int* out_newID, int* out_loopID, cv::Mat targetROI);
 	
 	void compareAndAdd(cv::Mat keyframe, int* out_newID, int* out_loopID);
 
@@ -55,14 +55,17 @@ private:
 	int nextImageID;
 	cv::Ptr<cv::FeatureDetector> detector;
 	cv::Ptr<cv::BOWImgDescriptorExtractor> bide;
+
+	// instance of the original openFABMAP
 	cv::Ptr<of2::FabMap> fabMap;
 	
-	bool printConfusionMatrix;
+	const bool printConfusionMatrix = true;
 	cv::Mat confusionMat;
 	
 	bool valid;
 
-	const float minLoopProbability = 0.99f;
+	const float minLoopProbability = 0.80f;
+	const int tolerance = 40;
 
 };
 

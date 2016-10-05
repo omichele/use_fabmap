@@ -7,12 +7,12 @@ SET(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 SET(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
+  "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeLists.txt"
+  "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/CMakeLists.txt"
+  "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/FindOpenCV.cmake"
   "CMakeFiles/2.8.12.2/CMakeCCompiler.cmake"
   "CMakeFiles/2.8.12.2/CMakeCXXCompiler.cmake"
   "CMakeFiles/2.8.12.2/CMakeSystem.cmake"
-  "CMakeLists.txt"
-  "openfabmap/CMakeLists.txt"
-  "openfabmap/FindOpenCV.cmake"
   "/usr/share/OpenCV/OpenCVConfig-version.cmake"
   "/usr/share/OpenCV/OpenCVConfig.cmake"
   "/usr/share/OpenCV/OpenCVModules-release.cmake"
@@ -52,6 +52,7 @@ SET(CMAKE_MAKEFILE_PRODUCTS
 SET(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/use_fabmap.dir/DependInfo.cmake"
   "CMakeFiles/use_fabmap_video_city_centre.dir/DependInfo.cmake"
+  "CMakeFiles/use_fabmap_video_mono.dir/DependInfo.cmake"
   "CMakeFiles/use_fabmap_video_st_lucia.dir/DependInfo.cmake"
   "openfabmap/CMakeFiles/openFABMAP.dir/DependInfo.cmake"
   )

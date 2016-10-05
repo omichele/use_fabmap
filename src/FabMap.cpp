@@ -10,16 +10,30 @@ namespace slam
 FabMap::FabMap()
 {
 	valid = false;
-	
+
 	std::string packagePath = "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/";
 
-	std::string fabmapTrainDataPath = packagePath + "openfabmap/trainingdata/StLuciaShortTraindata.yml";
-	std::string vocabPath = packagePath + "openfabmap/trainingdata/StLuciaShortVocabulary.yml";
-	std::string chowliutreePath = packagePath + "openfabmap/trainingdata/StLuciaShortTree.yml";
+	//std::string fabmapTrainDataPath = packagePath + "openfabmap/trainingdata/StLuciaShortTraindata.yml";
+	//std::string vocabPath = packagePath + "openfabmap/trainingdata/StLuciaShortVocabulary.yml";
+	//std::string chowliutreePath = packagePath + "openfabmap/trainingdata/StLuciaShortTree.yml";
+	//std::string resultsPath = packagePath + "results";
 
-//	std::string fabmapTrainDataPath = packagePath + "openfabmap/trainingdata/new_college/train_data.yml";
-//	std::string vocabPath = packagePath + "openfabmap/trainingdata/new_college/vocab.yml";
-//	std::string chowliutreePath = packagePath + "openfabmap/trainingdata/new_college/tree.yml";
+	//std::string fabmapTrainDataPath = "/home/michele/Documents/master thesis/softwares/openFABMAPsample/new_college/train_data.yml";
+	//std::string vocabPath = "/home/michele/Documents/master thesis/softwares/openFABMAPsample/new_college/vocab.yml";
+	//std::string chowliutreePath = "/home/michele/Documents/master thesis/softwares/openFABMAPsample/new_college/tree.yml";
+	//std::string resultsPath = packagePath + "results";
+
+	//std::string fabmapTrainDataPath = "/home/michele/Documents/master thesis/softwares/openFABMAPsample/train_data.yml";
+	//std::string vocabPath = "/home/michele/Documents/master thesis/softwares/openFABMAPsample/vocab.yml";
+	//std::string chowliutreePath = "/home/michele/Documents/master thesis/softwares/openFABMAPsample/tree.yml";;
+	//std::string resultsPath = packagePath + "results";
+	
+	std::string fabmapTrainDataPath = "/home/michele/Documents/master thesis/softwares/openFABMAPsample/Nantes/normal_voc_0_55/train_data.yml";
+	std::string vocabPath = "/home/michele/Documents/master thesis/softwares/openFABMAPsample/Nantes/normal_voc_0_55/vocab.yml";
+	std::string chowliutreePath = "/home/michele/Documents/master thesis/softwares/openFABMAPsample/Nantes/normal_voc_0_55/tree.yml";
+	std::string resultsPath = packagePath + "results";
+
+
 
 	// Load training data
 	cv::FileStorage fsTraining;
@@ -31,7 +45,7 @@ FabMap::FabMap()
 		return;
 	}
 	fsTraining.release();
-	
+
 	// Load vocabulary
 	cv::FileStorage fsVocabulary;
 	fsVocabulary.open(vocabPath, cv::FileStorage::READ);
@@ -53,37 +67,36 @@ FabMap::FabMap()
 		return;
 	}
 	fsTree.release();
-	
+
 
 	// ############################################################################# !!!!!!!!!!!!!!!!
 	// Generate openFabMap object (FabMap2 - needs training bow data!)
 	int options = 0;
 	options |= of2::FabMap::SAMPLED;
 	options |= of2::FabMap::CHOW_LIU;
-	fabMap = new of2::FabMap2(clTree, 0.39, 0, options);
+	fabMap = new of2::FabMap2(clTree, 0.39, 0, options);            // set 0.39 as false positive rate !!!!!!!!!!!!
 	//add the training data for use with the sampling method
 	fabMap->addTraining(fabmapTrainData);
-	
-// 	// Generate openFabMap object (FabMap1 with look up table)
-// 	int options = 0;
-// 	options |= of2::FabMap::MEAN_FIELD;
-// 	options |= of2::FabMap::CHOW_LIU;
-// 	//fabMap = new of2::FabMap(clTree, 0.39, 0, options);
-// 	fabMap = new of2::FabMapLUT(clTree, 0.39, 0, options, 3000, 6);
-// 	//fabMap = new of2::FabMapFBO(clTree, 0.39, 0, options, 3000, 1e-6, 1e-6, 512, 9);
-	
+
+	// 	// Generate openFabMap object (FabMap1 with look up table)
+	// 	int options = 0;
+	// 	options |= of2::FabMap::MEAN_FIELD;
+	// 	options |= of2::FabMap::CHOW_LIU;
+	// 	//fabMap = new of2::FabMap(clTree, 0.39, 0, options);
+	// 	fabMap = new of2::FabMapLUT(clTree, 0.39, 0, options, 3000, 6);
+	// 	//fabMap = new of2::FabMapFBO(clTree, 0.39, 0, options, 3000, 1e-6, 1e-6, 512, 9);
+
 	// Create detector & extractor
 	detector = new cv::StarFeatureDetector(32, 10, 18, 18, 20);
 	cv::Ptr<cv::DescriptorExtractor> extractor = new cv::SURF(1000, 4, 2, false, true); // new cv::SIFT();
-	
+
 	//use a FLANN matcher to generate bag-of-words representations
 	cv::Ptr<cv::DescriptorMatcher> matcher = cv::DescriptorMatcher::create("FlannBased"); // alternative: "BruteForce"
 	bide = new cv::BOWImgDescriptorExtractor(extractor, matcher);
 	bide->setVocabulary(vocabulary);
-	
-	printConfusionMatrix = false;
+
 	confusionMat = cv::Mat(0, 0, CV_32F);
-	
+
 	nextImageID = 0;
 	valid = true;
 }
@@ -91,10 +104,11 @@ FabMap::FabMap()
 FabMap::~FabMap()
 {
 	std::string packagePath = "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/";
+	std::string resultsPath = packagePath + "results";
 
 	if (printConfusionMatrix)
 	{
-		std::ofstream writer((packagePath + "fabMapResult.txt").c_str());
+		std::ofstream writer((resultsPath + "fabMapResult.txt").c_str());
 		for(int i = 0; i < confusionMat.rows; i++) {
 			for(int j = 0; j < confusionMat.cols; j++) {
 				writer << confusionMat.at<float>(i, j) << " ";
@@ -107,7 +121,7 @@ FabMap::~FabMap()
 
 
 
-void FabMap::compareAndAdd(cv::Mat frame, int* out_newID, int* out_loopID, cv::Mat targetROI)
+double FabMap::compareAndAdd(cv::Mat frame, int* out_newID, int* out_loopID, cv::Mat targetROI)
 {
 	// Convert keyframe image data to 3-channel OpenCV Mat (theoretically unneccessary)
 	// cv::Mat frame;
@@ -124,7 +138,7 @@ void FabMap::compareAndAdd(cv::Mat frame, int* out_newID, int* out_loopID, cv::M
 		std::cout << "No keypoints detected!!!!" << std::endl;
 		*out_newID = -1;
 		*out_loopID = -1;
-		return;
+		return 0;
 	}
 
 	cv::drawKeypoints(frame, kpts, kptsImg);
@@ -133,7 +147,7 @@ void FabMap::compareAndAdd(cv::Mat frame, int* out_newID, int* out_loopID, cv::M
 	kptsImg.copyTo(targetROI);
 
 	bide->compute(frame, kpts, bow);          // compute the descriptor (in terms of the dictionary)
-	
+
 	// Run FabMap
 	std::vector<of2::IMatch> matches;
 	if (nextImageID > 0)
@@ -141,14 +155,14 @@ void FabMap::compareAndAdd(cv::Mat frame, int* out_newID, int* out_loopID, cv::M
 	fabMap->add(bow);                          // add the descriptors
 	*out_newID = nextImageID;
 	++nextImageID;
-	
+
 	if (printConfusionMatrix)
 	{
 		cv::Mat resizedMat(nextImageID, nextImageID, confusionMat.type(), cv::Scalar(0));
 		if (confusionMat.rows > 0)
 			confusionMat.copyTo(resizedMat(cv::Rect(cv::Point(0, 0), confusionMat.size())));
 		confusionMat = resizedMat;
-		
+
 		for(auto l = matches.begin(); l != matches.end(); ++ l)
 		{
 			int col = (l->imgIdx < 0) ? (nextImageID-1) : l->imgIdx;
@@ -156,11 +170,16 @@ void FabMap::compareAndAdd(cv::Mat frame, int* out_newID, int* out_loopID, cv::M
 		}
 	}
 
-	
+
 	float accumulatedProbability = 0;
 
+	int flag = 0;      // variable set by my to say if we have a match or not!!!
+
+	double most_likely_place_prob = 0;
+
+
 	// #################### IMPORTANT  !!!!!!!!!!!!  #########################
-	const bool debugProbabilites = true;
+	const bool debugProbabilites = false;
 	int counter = 0;
 
 	if (debugProbabilites){
@@ -168,53 +187,53 @@ void FabMap::compareAndAdd(cv::Mat frame, int* out_newID, int* out_loopID, cv::M
 		printf("FabMap probabilities: \n");
 	}
 
-	printf("Current image number: %d \n", *out_newID);
 
 	for( auto l = matches.begin(); l != matches.end(); ++l )
 	{
 		counter++;
 
 		if (debugProbabilites){
-			printf(" (%i: %f) ", l->imgIdx, l->match);
+			if(l->match >= 0.1){
+				printf(" (%i: %f) ", l->imgIdx, l->match);
+			}
 			// std::cout << "Current processed image: " << *out_newID << std::endl;
 		}
-		
-		if(l->imgIdx < 0)
+
+		// Probability for existing place
+		if (l->match >= minLoopProbability && abs( *out_newID - counter - 2 ) >= tolerance && l->match >= most_likely_place_prob)
 		{
-			// Probability for new place:  index = -1
-			accumulatedProbability += l->match;
-			// std::cout << "New place probability!" << std::endl;
-		}
-		else
-		{
-			// Probability for existing place
-			if (l->match >= minLoopProbability && abs( *out_newID - counter - 2 ) >= 80)
-			{
-				*out_loopID = l->imgIdx;      // if a loop closure is detected
-				if (debugProbabilites){
-					std::cout << std::endl << "Match!!! Prob = "  << l->match << std::endl;
-					printf("\n");
-				}
-				// std::cout << std::endl << counter  << std::endl;
-				// std::cout << std::endl << abs( *out_newID -  counter )  << std::endl;
-				std::cout << std::endl << "Match!!! Prob = "  << l->match << std::endl;
+			*out_loopID = l->imgIdx;      // if a loop closure is detected
+			// std::cout << std::endl << counter  << std::endl;
+			// std::cout << std::endl << abs( *out_newID -  counter )  << std::endl;
+			if (debugProbabilites){
+				std::cout << std::endl << "Match!!!"  << l->match << std::endl;
 				printf("\n");
-				return;
 			}
-			accumulatedProbability += l->match;
+			most_likely_place_prob = l->match;
+			flag = 1;
 		}
-		
-		if (! debugProbabilites && accumulatedProbability > 1 - minLoopProbability)
+
+		if ( !debugProbabilites && accumulatedProbability > 1 - minLoopProbability)
 		{
 			std::cout << "Debug break!!!!!" << std::endl;
 			break; // not possible anymore to find a frame with high enough probability
 		}
+
+
 	}
+
+
 	if (debugProbabilites)
 		printf("\n");
-	
-	*out_loopID = -1;			// important !!!!!!!!
-	return;
+
+	if(flag){
+		return most_likely_place_prob;
+	}
+	else {
+		*out_loopID = -1;			// important !!!!!!!!
+	}
+
+	return 0;
 }
 
 
@@ -249,15 +268,15 @@ void FabMap::compareAndAdd(cv::Mat frame, int* out_newID, int* out_loopID)
 
 	if (printConfusionMatrix)
 	{
-		cv::Mat resizedMat(nextImageID, nextImageID, confusionMat.type(), cv::Scalar(0));
+		cv::Mat resizedMat(nextImageID, nextImageID, confusionMat.type(), cv::Scalar(0));       // dynamically increment the size of the confusion matrix
 		if (confusionMat.rows > 0)
 			confusionMat.copyTo(resizedMat(cv::Rect(cv::Point(0, 0), confusionMat.size())));
 		confusionMat = resizedMat;
 
 		for(auto l = matches.begin(); l != matches.end(); ++ l)
 		{
-			int col = (l->imgIdx < 0) ? (nextImageID-1) : l->imgIdx;
-			confusionMat.at<float>(nextImageID-1, col) = l->match;
+			int col = (l->imgIdx < 0) ? (nextImageID-1) : l->imgIdx;        // add to the diagonal as a new place or to and already visited location
+			confusionMat.at<float>(nextImageID-1, col) = l->match;          // append the probability of the match
 		}
 	}
 
@@ -272,14 +291,14 @@ void FabMap::compareAndAdd(cv::Mat frame, int* out_newID, int* out_loopID)
 		printf("FabMap probabilities: \n");
 	}
 
-	printf("Current image number: %d \n", *out_newID);
-
 	for( auto l = matches.begin(); l != matches.end(); ++l )
 	{
 		counter++;
 
 		if (debugProbabilites){
-			printf(" (%i: %f) ", l->imgIdx, l->match);
+			if(l->match >= 0.1){
+				printf(" (%i: %f) ", l->imgIdx, l->match);
+			}
 			// std::cout << "Current processed image: " << *out_newID << std::endl;
 		}
 
@@ -292,14 +311,15 @@ void FabMap::compareAndAdd(cv::Mat frame, int* out_newID, int* out_loopID)
 		else
 		{
 			// Probability for existing place
-			if (std::max(l->match) >= minLoopProbability && abs( *out_newID - counter - 2 ) >= 80)
-			if (l->match >= minLoopProbability && abs( *out_newID - counter - 2 ) >= 80)
+			if (l->match >= minLoopProbability && abs( *out_newID - counter - 2 ) >= tolerance)
 			{
 				*out_loopID = l->imgIdx;      // if a loop closure is detected
 				// std::cout << std::endl << counter  << std::endl;
 				// std::cout << std::endl << abs( *out_newID -  counter )  << std::endl;
-				std::cout << std::endl << "Match!!! Prob = "  << l->match << std::endl;
-				printf("\n");
+				if (debugProbabilites){
+					std::cout << std::endl << "Match!!! Prob = "  << l->match << std::endl;
+					printf("\n");
+				}
 				return;
 			}
 			accumulatedProbability += l->match;
@@ -324,11 +344,10 @@ bool FabMap::isValid() const
 	return valid;
 }
 
-}
 
 
-
-void drawRichKeypoints(const cv::Mat& src, std::vector<cv::KeyPoint>& kpts, cv::Mat& dst) {
+void drawRichKeypoints(const cv::Mat& src, std::vector<cv::KeyPoint>& kpts, cv::Mat& dst)
+{
 
 	cv::Mat grayFrame;
 	cvtColor(src, grayFrame, CV_RGB2GRAY);
@@ -382,7 +401,7 @@ void drawRichKeypoints(const cv::Mat& src, std::vector<cv::KeyPoint>& kpts, cv::
 		colour = CV_RGB(255, 0, 0);
 	}
 
-    for (int iii = (int)kpts_sorted.size()-1; iii >= 0; iii--) {
+	for (int iii = (int)kpts_sorted.size()-1; iii >= 0; iii--) {
 
 		if (minResponse != maxResponse) {
 			normalizedScore = pow((kpts_sorted.at(iii).response - minResponse) / (maxResponse - minResponse), 0.25);
@@ -392,15 +411,17 @@ void drawRichKeypoints(const cv::Mat& src, std::vector<cv::KeyPoint>& kpts, cv::
 		}
 
 		center = kpts_sorted.at(iii).pt;
-        center.x *= 16;
-        center.y *= 16;
+		center.x *= 16;
+		center.y *= 16;
 
-        radius = (int)(16.0 * ((double)(kpts_sorted.at(iii).size)/2.0));
+		radius = (int)(16.0 * ((double)(kpts_sorted.at(iii).size)/2.0));
 
-        if (radius > 0) {
-            circle(dst, center, radius, colour, thickness, CV_AA, 4);
-        }
+		if (radius > 0) {
+			circle(dst, center, radius, colour, thickness, CV_AA, 4);
+		}
 
 	}
 
 }
+
+} // namespace slam

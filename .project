@@ -31,6 +31,11 @@
 			<locationURI>PARENT-12-PROJECT_LOC/home/michele/Documents/master%20thesis/softwares/workspace/use_fabmap/src/use_fabmap_video_city_center.cpp</locationURI>
 		</link>
 		<link>
+			<name>src/use_fabmap_video_mono.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-12-PROJECT_LOC/home/michele/Documents/master%20thesis/softwares/workspace/use_fabmap/src/use_fabmap_video_mono.cpp</locationURI>
+		</link>
+		<link>
 			<name>src/use_fabmap_video_st_lucia.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-12-PROJECT_LOC/home/michele/Documents/master%20thesis/softwares/workspace/use_fabmap/src/use_fabmap_video_st_lucia.cpp</locationURI>
