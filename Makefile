@@ -42,7 +42,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap"
+CMAKE_BINARY_DIR = /home/michele/Documents/workspace/use_fabmap
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -69,9 +69,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles" "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles/progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/michele/Documents/workspace/use_fabmap/CMakeFiles /home/michele/Documents/workspace/use_fabmap/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/michele/Documents/workspace/use_fabmap/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -125,6 +125,19 @@ use_fabmap_video_city_centre/fast:
 .PHONY : use_fabmap_video_city_centre/fast
 
 #=============================================================================
+# Target rules for targets named use_fabmap_video_mono
+
+# Build rule for target.
+use_fabmap_video_mono: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 use_fabmap_video_mono
+.PHONY : use_fabmap_video_mono
+
+# fast build rule for target.
+use_fabmap_video_mono/fast:
+	$(MAKE) -f CMakeFiles/use_fabmap_video_mono.dir/build.make CMakeFiles/use_fabmap_video_mono.dir/build
+.PHONY : use_fabmap_video_mono/fast
+
+#=============================================================================
 # Target rules for targets named use_fabmap_video_st_lucia
 
 # Build rule for target.
@@ -157,6 +170,7 @@ src/FabMap.o: src/FabMap.cpp.o
 src/FabMap.cpp.o:
 	$(MAKE) -f CMakeFiles/use_fabmap.dir/build.make CMakeFiles/use_fabmap.dir/src/FabMap.cpp.o
 	$(MAKE) -f CMakeFiles/use_fabmap_video_city_centre.dir/build.make CMakeFiles/use_fabmap_video_city_centre.dir/src/FabMap.cpp.o
+	$(MAKE) -f CMakeFiles/use_fabmap_video_mono.dir/build.make CMakeFiles/use_fabmap_video_mono.dir/src/FabMap.cpp.o
 	$(MAKE) -f CMakeFiles/use_fabmap_video_st_lucia.dir/build.make CMakeFiles/use_fabmap_video_st_lucia.dir/src/FabMap.cpp.o
 .PHONY : src/FabMap.cpp.o
 
@@ -167,6 +181,7 @@ src/FabMap.i: src/FabMap.cpp.i
 src/FabMap.cpp.i:
 	$(MAKE) -f CMakeFiles/use_fabmap.dir/build.make CMakeFiles/use_fabmap.dir/src/FabMap.cpp.i
 	$(MAKE) -f CMakeFiles/use_fabmap_video_city_centre.dir/build.make CMakeFiles/use_fabmap_video_city_centre.dir/src/FabMap.cpp.i
+	$(MAKE) -f CMakeFiles/use_fabmap_video_mono.dir/build.make CMakeFiles/use_fabmap_video_mono.dir/src/FabMap.cpp.i
 	$(MAKE) -f CMakeFiles/use_fabmap_video_st_lucia.dir/build.make CMakeFiles/use_fabmap_video_st_lucia.dir/src/FabMap.cpp.i
 .PHONY : src/FabMap.cpp.i
 
@@ -177,6 +192,7 @@ src/FabMap.s: src/FabMap.cpp.s
 src/FabMap.cpp.s:
 	$(MAKE) -f CMakeFiles/use_fabmap.dir/build.make CMakeFiles/use_fabmap.dir/src/FabMap.cpp.s
 	$(MAKE) -f CMakeFiles/use_fabmap_video_city_centre.dir/build.make CMakeFiles/use_fabmap_video_city_centre.dir/src/FabMap.cpp.s
+	$(MAKE) -f CMakeFiles/use_fabmap_video_mono.dir/build.make CMakeFiles/use_fabmap_video_mono.dir/src/FabMap.cpp.s
 	$(MAKE) -f CMakeFiles/use_fabmap_video_st_lucia.dir/build.make CMakeFiles/use_fabmap_video_st_lucia.dir/src/FabMap.cpp.s
 .PHONY : src/FabMap.cpp.s
 
@@ -228,6 +244,30 @@ src/use_fabmap_video_city_center.cpp.s:
 	$(MAKE) -f CMakeFiles/use_fabmap_video_city_centre.dir/build.make CMakeFiles/use_fabmap_video_city_centre.dir/src/use_fabmap_video_city_center.cpp.s
 .PHONY : src/use_fabmap_video_city_center.cpp.s
 
+src/use_fabmap_video_mono.o: src/use_fabmap_video_mono.cpp.o
+.PHONY : src/use_fabmap_video_mono.o
+
+# target to build an object file
+src/use_fabmap_video_mono.cpp.o:
+	$(MAKE) -f CMakeFiles/use_fabmap_video_mono.dir/build.make CMakeFiles/use_fabmap_video_mono.dir/src/use_fabmap_video_mono.cpp.o
+.PHONY : src/use_fabmap_video_mono.cpp.o
+
+src/use_fabmap_video_mono.i: src/use_fabmap_video_mono.cpp.i
+.PHONY : src/use_fabmap_video_mono.i
+
+# target to preprocess a source file
+src/use_fabmap_video_mono.cpp.i:
+	$(MAKE) -f CMakeFiles/use_fabmap_video_mono.dir/build.make CMakeFiles/use_fabmap_video_mono.dir/src/use_fabmap_video_mono.cpp.i
+.PHONY : src/use_fabmap_video_mono.cpp.i
+
+src/use_fabmap_video_mono.s: src/use_fabmap_video_mono.cpp.s
+.PHONY : src/use_fabmap_video_mono.s
+
+# target to generate assembly for a file
+src/use_fabmap_video_mono.cpp.s:
+	$(MAKE) -f CMakeFiles/use_fabmap_video_mono.dir/build.make CMakeFiles/use_fabmap_video_mono.dir/src/use_fabmap_video_mono.cpp.s
+.PHONY : src/use_fabmap_video_mono.cpp.s
+
 src/use_fabmap_video_st_lucia.o: src/use_fabmap_video_st_lucia.cpp.o
 .PHONY : src/use_fabmap_video_st_lucia.o
 
@@ -262,6 +302,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... use_fabmap"
 	@echo "... use_fabmap_video_city_centre"
+	@echo "... use_fabmap_video_mono"
 	@echo "... use_fabmap_video_st_lucia"
 	@echo "... openFABMAP"
 	@echo "... src/FabMap.o"
@@ -273,6 +314,9 @@ help:
 	@echo "... src/use_fabmap_video_city_center.o"
 	@echo "... src/use_fabmap_video_city_center.i"
 	@echo "... src/use_fabmap_video_city_center.s"
+	@echo "... src/use_fabmap_video_mono.o"
+	@echo "... src/use_fabmap_video_mono.i"
+	@echo "... src/use_fabmap_video_mono.s"
 	@echo "... src/use_fabmap_video_st_lucia.o"
 	@echo "... src/use_fabmap_video_st_lucia.i"
 	@echo "... src/use_fabmap_video_st_lucia.s"

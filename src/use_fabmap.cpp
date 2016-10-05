@@ -10,7 +10,7 @@ using namespace cv;
 
 
 
-int main(int argc, char * argv[])
+int main(int argc, char* argv[])
 {
 	if( argc != 2)
 	{
@@ -21,6 +21,8 @@ int main(int argc, char * argv[])
 
 	// std::unordered_map<int, Mat> fabmapIDToKeyframe;
 	std::vector<cv::Mat> memory;
+
+	// creation of the modified FABMAP object -- with the method compare and add
 	slam::FabMap fabMap;
 
 	string input = argv[1];

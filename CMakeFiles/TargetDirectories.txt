@@ -1,4 +1,5 @@
-/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/CMakeFiles/openFABMAP.dir
-/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles/use_fabmap.dir
-/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles/use_fabmap_video_city_centre.dir
-/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles/use_fabmap_video_st_lucia.dir
+/home/michele/Documents/workspace/use_fabmap/openfabmap/CMakeFiles/openFABMAP.dir
+/home/michele/Documents/workspace/use_fabmap/CMakeFiles/use_fabmap.dir
+/home/michele/Documents/workspace/use_fabmap/CMakeFiles/use_fabmap_video_city_centre.dir
+/home/michele/Documents/workspace/use_fabmap/CMakeFiles/use_fabmap_video_mono.dir
+/home/michele/Documents/workspace/use_fabmap/CMakeFiles/use_fabmap_video_st_lucia.dir

@@ -311,3 +311,53 @@ int main() {
 #endif
 }
 
+Performing C SOURCE FILE Test OpenMP_FLAG_DETECTED succeded with the following output:
+Change Dir: /home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec2101526915/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec2101526915.dir/build.make CMakeFiles/cmTryCompileExec2101526915.dir/build
+make[1]: Entering directory `/media/michele/Data/miche/file temporanei/DOCUMENTI MIEI/lavori università/robotics/master thesis/softwares/workspace/use_fabmap/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles/CMakeTmp/CMakeFiles" 1
+Building C object CMakeFiles/cmTryCompileExec2101526915.dir/src.c.o
+/usr/bin/cc   -DOpenMP_FLAG_DETECTED -fopenmp   -o CMakeFiles/cmTryCompileExec2101526915.dir/src.c.o   -c "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles/CMakeTmp/src.c"
+Linking C executable cmTryCompileExec2101526915
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec2101526915.dir/link.txt --verbose=1
+/usr/bin/cc   -DOpenMP_FLAG_DETECTED -fopenmp    CMakeFiles/cmTryCompileExec2101526915.dir/src.c.o  -o cmTryCompileExec2101526915 -rdynamic 
+make[1]: Leaving directory `/media/michele/Data/miche/file temporanei/DOCUMENTI MIEI/lavori università/robotics/master thesis/softwares/workspace/use_fabmap/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+
+Performing C++ SOURCE FILE Test OpenMP_FLAG_DETECTED succeded with the following output:
+Change Dir: /home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3630037788/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3630037788.dir/build.make CMakeFiles/cmTryCompileExec3630037788.dir/build
+make[1]: Entering directory `/media/michele/Data/miche/file temporanei/DOCUMENTI MIEI/lavori università/robotics/master thesis/softwares/workspace/use_fabmap/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles/CMakeTmp/CMakeFiles" 1
+Building CXX object CMakeFiles/cmTryCompileExec3630037788.dir/src.cxx.o
+/usr/bin/c++    -Wall -Wno-long-long -pedantic  -march=native  -std=c++0x -DOpenMP_FLAG_DETECTED -fopenmp   -o CMakeFiles/cmTryCompileExec3630037788.dir/src.cxx.o -c "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles/CMakeTmp/src.cxx"
+Linking CXX executable cmTryCompileExec3630037788
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3630037788.dir/link.txt --verbose=1
+/usr/bin/c++    -Wall -Wno-long-long -pedantic  -march=native  -std=c++0x -DOpenMP_FLAG_DETECTED -fopenmp    CMakeFiles/cmTryCompileExec3630037788.dir/src.cxx.o  -o cmTryCompileExec3630037788 -rdynamic 
+make[1]: Leaving directory `/media/michele/Data/miche/file temporanei/DOCUMENTI MIEI/lavori università/robotics/master thesis/softwares/workspace/use_fabmap/CMakeFiles/CMakeTmp'
+
+Source file was:
+
+#include <omp.h>
+int main() {
+#ifdef _OPENMP
+  return 0;
+#else
+  breaks_on_purpose
+#endif
+}
+

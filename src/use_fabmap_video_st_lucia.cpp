@@ -12,7 +12,7 @@ using namespace cv;
 
 int main(int argc, char * argv[])
 {
-	if( argc != 3)
+	if( argc != 4)
 	{
 		std::cout << "Problems" << std::endl;
 		return -1;
@@ -39,7 +39,7 @@ int main(int argc, char * argv[])
 
 	cv::VideoCapture sequence1;
 
-	if( argc == 3){
+	if( argc == 3 ){
 		string imageName1 = argv[3];
 		sequence1.open(dirName + "/" + imageName1);
 	}
@@ -74,11 +74,25 @@ int main(int argc, char * argv[])
 	img0.copyTo(targetROI1);
 	img1.copyTo(targetROI2);
 
-	namedWindow("OpenCV Window");
+	// prova text
+	cv::Point org;
+	org.x = img0.cols/2;
+	org.y = img0.rows/2;
+
+
+	// disply it in targetROI4
+	cv::Mat text_img = cv::Mat(img0.rows, img0.cols, img0.type(), cv::Scalar(70,70,70));
+	cv::putText(text_img, "prob", org, cv::FONT_HERSHEY_SIMPLEX, 3, Scalar( 255, 255, 255 ), 10);
+
+	text_img.copyTo(targetROI3);
+
+
+
+	namedWindow("OpenCV Window", cv::WINDOW_NORMAL);
 	// show the image on window
 	imshow("OpenCV Window", dst);
 	// wait key for 5000 ms
-	waitKey(40);
+	waitKey(0);
 	// waitKey(0);
 
 	// sleep(5000);

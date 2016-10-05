@@ -42,7 +42,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap"
+CMAKE_BINARY_DIR = /home/michele/Documents/workspace/use_fabmap
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -69,14 +69,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap" && $(CMAKE_COMMAND) -E cmake_progress_start "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles" "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/CMakeFiles/progress.marks"
-	cd "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap" && $(MAKE) -f CMakeFiles/Makefile2 openfabmap/all
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles" 0
+	cd /home/michele/Documents/workspace/use_fabmap && $(CMAKE_COMMAND) -E cmake_progress_start /home/michele/Documents/workspace/use_fabmap/CMakeFiles /home/michele/Documents/workspace/use_fabmap/openfabmap/CMakeFiles/progress.marks
+	cd /home/michele/Documents/workspace/use_fabmap && $(MAKE) -f CMakeFiles/Makefile2 openfabmap/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/michele/Documents/workspace/use_fabmap/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap" && $(MAKE) -f CMakeFiles/Makefile2 openfabmap/clean
+	cd /home/michele/Documents/workspace/use_fabmap && $(MAKE) -f CMakeFiles/Makefile2 openfabmap/clean
 .PHONY : clean
 
 # The main clean target
@@ -85,22 +85,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap" && $(MAKE) -f CMakeFiles/Makefile2 openfabmap/preinstall
+	cd /home/michele/Documents/workspace/use_fabmap && $(MAKE) -f CMakeFiles/Makefile2 openfabmap/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap" && $(MAKE) -f CMakeFiles/Makefile2 openfabmap/preinstall
+	cd /home/michele/Documents/workspace/use_fabmap && $(MAKE) -f CMakeFiles/Makefile2 openfabmap/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap" && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/michele/Documents/workspace/use_fabmap && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 openfabmap/CMakeFiles/openFABMAP.dir/rule:
-	cd "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap" && $(MAKE) -f CMakeFiles/Makefile2 openfabmap/CMakeFiles/openFABMAP.dir/rule
+	cd /home/michele/Documents/workspace/use_fabmap && $(MAKE) -f CMakeFiles/Makefile2 openfabmap/CMakeFiles/openFABMAP.dir/rule
 .PHONY : openfabmap/CMakeFiles/openFABMAP.dir/rule
 
 # Convenience name for target.
@@ -109,7 +109,7 @@ openFABMAP: openfabmap/CMakeFiles/openFABMAP.dir/rule
 
 # fast build rule for target.
 openFABMAP/fast:
-	cd "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap" && $(MAKE) -f openfabmap/CMakeFiles/openFABMAP.dir/build.make openfabmap/CMakeFiles/openFABMAP.dir/build
+	cd /home/michele/Documents/workspace/use_fabmap && $(MAKE) -f openfabmap/CMakeFiles/openFABMAP.dir/build.make openfabmap/CMakeFiles/openFABMAP.dir/build
 .PHONY : openFABMAP/fast
 
 src/BOWMSCTrainer.o: src/BOWMSCTrainer.cpp.o
@@ -117,7 +117,7 @@ src/BOWMSCTrainer.o: src/BOWMSCTrainer.cpp.o
 
 # target to build an object file
 src/BOWMSCTrainer.cpp.o:
-	cd "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap" && $(MAKE) -f openfabmap/CMakeFiles/openFABMAP.dir/build.make openfabmap/CMakeFiles/openFABMAP.dir/src/BOWMSCTrainer.cpp.o
+	cd /home/michele/Documents/workspace/use_fabmap && $(MAKE) -f openfabmap/CMakeFiles/openFABMAP.dir/build.make openfabmap/CMakeFiles/openFABMAP.dir/src/BOWMSCTrainer.cpp.o
 .PHONY : src/BOWMSCTrainer.cpp.o
 
 src/BOWMSCTrainer.i: src/BOWMSCTrainer.cpp.i
@@ -125,7 +125,7 @@ src/BOWMSCTrainer.i: src/BOWMSCTrainer.cpp.i
 
 # target to preprocess a source file
 src/BOWMSCTrainer.cpp.i:
-	cd "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap" && $(MAKE) -f openfabmap/CMakeFiles/openFABMAP.dir/build.make openfabmap/CMakeFiles/openFABMAP.dir/src/BOWMSCTrainer.cpp.i
+	cd /home/michele/Documents/workspace/use_fabmap && $(MAKE) -f openfabmap/CMakeFiles/openFABMAP.dir/build.make openfabmap/CMakeFiles/openFABMAP.dir/src/BOWMSCTrainer.cpp.i
 .PHONY : src/BOWMSCTrainer.cpp.i
 
 src/BOWMSCTrainer.s: src/BOWMSCTrainer.cpp.s
@@ -133,7 +133,7 @@ src/BOWMSCTrainer.s: src/BOWMSCTrainer.cpp.s
 
 # target to generate assembly for a file
 src/BOWMSCTrainer.cpp.s:
-	cd "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap" && $(MAKE) -f openfabmap/CMakeFiles/openFABMAP.dir/build.make openfabmap/CMakeFiles/openFABMAP.dir/src/BOWMSCTrainer.cpp.s
+	cd /home/michele/Documents/workspace/use_fabmap && $(MAKE) -f openfabmap/CMakeFiles/openFABMAP.dir/build.make openfabmap/CMakeFiles/openFABMAP.dir/src/BOWMSCTrainer.cpp.s
 .PHONY : src/BOWMSCTrainer.cpp.s
 
 src/ChowLiuTree.o: src/ChowLiuTree.cpp.o
@@ -141,7 +141,7 @@ src/ChowLiuTree.o: src/ChowLiuTree.cpp.o
 
 # target to build an object file
 src/ChowLiuTree.cpp.o:
-	cd "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap" && $(MAKE) -f openfabmap/CMakeFiles/openFABMAP.dir/build.make openfabmap/CMakeFiles/openFABMAP.dir/src/ChowLiuTree.cpp.o
+	cd /home/michele/Documents/workspace/use_fabmap && $(MAKE) -f openfabmap/CMakeFiles/openFABMAP.dir/build.make openfabmap/CMakeFiles/openFABMAP.dir/src/ChowLiuTree.cpp.o
 .PHONY : src/ChowLiuTree.cpp.o
 
 src/ChowLiuTree.i: src/ChowLiuTree.cpp.i
@@ -149,7 +149,7 @@ src/ChowLiuTree.i: src/ChowLiuTree.cpp.i
 
 # target to preprocess a source file
 src/ChowLiuTree.cpp.i:
-	cd "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap" && $(MAKE) -f openfabmap/CMakeFiles/openFABMAP.dir/build.make openfabmap/CMakeFiles/openFABMAP.dir/src/ChowLiuTree.cpp.i
+	cd /home/michele/Documents/workspace/use_fabmap && $(MAKE) -f openfabmap/CMakeFiles/openFABMAP.dir/build.make openfabmap/CMakeFiles/openFABMAP.dir/src/ChowLiuTree.cpp.i
 .PHONY : src/ChowLiuTree.cpp.i
 
 src/ChowLiuTree.s: src/ChowLiuTree.cpp.s
@@ -157,7 +157,7 @@ src/ChowLiuTree.s: src/ChowLiuTree.cpp.s
 
 # target to generate assembly for a file
 src/ChowLiuTree.cpp.s:
-	cd "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap" && $(MAKE) -f openfabmap/CMakeFiles/openFABMAP.dir/build.make openfabmap/CMakeFiles/openFABMAP.dir/src/ChowLiuTree.cpp.s
+	cd /home/michele/Documents/workspace/use_fabmap && $(MAKE) -f openfabmap/CMakeFiles/openFABMAP.dir/build.make openfabmap/CMakeFiles/openFABMAP.dir/src/ChowLiuTree.cpp.s
 .PHONY : src/ChowLiuTree.cpp.s
 
 src/FabMap.o: src/FabMap.cpp.o
@@ -165,7 +165,7 @@ src/FabMap.o: src/FabMap.cpp.o
 
 # target to build an object file
 src/FabMap.cpp.o:
-	cd "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap" && $(MAKE) -f openfabmap/CMakeFiles/openFABMAP.dir/build.make openfabmap/CMakeFiles/openFABMAP.dir/src/FabMap.cpp.o
+	cd /home/michele/Documents/workspace/use_fabmap && $(MAKE) -f openfabmap/CMakeFiles/openFABMAP.dir/build.make openfabmap/CMakeFiles/openFABMAP.dir/src/FabMap.cpp.o
 .PHONY : src/FabMap.cpp.o
 
 src/FabMap.i: src/FabMap.cpp.i
@@ -173,7 +173,7 @@ src/FabMap.i: src/FabMap.cpp.i
 
 # target to preprocess a source file
 src/FabMap.cpp.i:
-	cd "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap" && $(MAKE) -f openfabmap/CMakeFiles/openFABMAP.dir/build.make openfabmap/CMakeFiles/openFABMAP.dir/src/FabMap.cpp.i
+	cd /home/michele/Documents/workspace/use_fabmap && $(MAKE) -f openfabmap/CMakeFiles/openFABMAP.dir/build.make openfabmap/CMakeFiles/openFABMAP.dir/src/FabMap.cpp.i
 .PHONY : src/FabMap.cpp.i
 
 src/FabMap.s: src/FabMap.cpp.s
@@ -181,7 +181,7 @@ src/FabMap.s: src/FabMap.cpp.s
 
 # target to generate assembly for a file
 src/FabMap.cpp.s:
-	cd "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap" && $(MAKE) -f openfabmap/CMakeFiles/openFABMAP.dir/build.make openfabmap/CMakeFiles/openFABMAP.dir/src/FabMap.cpp.s
+	cd /home/michele/Documents/workspace/use_fabmap && $(MAKE) -f openfabmap/CMakeFiles/openFABMAP.dir/build.make openfabmap/CMakeFiles/openFABMAP.dir/src/FabMap.cpp.s
 .PHONY : src/FabMap.cpp.s
 
 # Help Target
@@ -213,6 +213,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap" && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/michele/Documents/workspace/use_fabmap && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

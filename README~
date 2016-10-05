@@ -3,7 +3,10 @@
 ./bin/use_fabmap '/home/michele/Documents/master thesis/datasets/alderley/FRAMESB/FRAMESB'
 ./bin/use_fabmap_video '/home/michele/Documents/master thesis/datasets/alderley/FRAMESB/FRAMESB' 'Image%05d.jpg'
 ./bin/use_fabmap_video '/home/michele/Documents/master thesis/datasets/alderley/FRAMESA/FRAMESA' 'Image%05d.jpg' '/home/michele/Documents/master thesis/datasets/alderley/FRAMESB/FRAMESB' 'Image%05d.jpg'
-./bin/use_fabmap '/media/michele/SAMSUNG/miche/files/stlucia/Data/101215_153851_MultiCamera0'
-./bin/use_fabmap_video '/media/michele/SAMSUNG/miche/files/stlucia/101215_153851_MultiCamera0_deb' 'cam0_image%05d.bmp'
-./bin/use_fabmap_video '/home/michele/Documents/master thesis/datasets/new_college/Images' '%04d.jpg'
-./bin/use_fabmap_video '/home/michele/Documents/master thesis/datasets/city_centre/Images/Images' '%04d.jpg'
+./bin/use_fabmap '/media/michele/SAMSUNG/miche/files/stlucia/101215_153851_MultiCamera0_deb'
+./bin/use_fabmap_video_st_lucia '/media/michele/SAMSUNG/miche/files/stlucia/101215_153851_MultiCamera0_deb' 'cam0_image%05d.bmp' 'cam1_image%05d.bmp'
+./bin/use_fabmap_video_city_centre '/home/michele/Documents/master thesis/datasets/new_college/Images' '%04d.jpg'
+./bin/use_fabmap_video_city_centre '/home/michele/Documents/master thesis/datasets/city_centre/Images/Images' '%04d.jpg'
+./bin/use_fabmap_video_mono '/media/michele/TOSHIBA EXT1/Nantes_city_centre_dataset/sunny/Images2' 'Image%05d.png' 1
+./bin/use_fabmap_video_mono '/home/michele/Documents/master thesis/datasets/VPRiCE-dataset/VPRiCE-dataset/memory' 'image-%05d.png' 1
+./bin/use_fabmap_video_mono '/media/michele/SAMSUNG1/miche/files/kitty/2010_03_09_drive_0019' 'I1_%06d.png' 1

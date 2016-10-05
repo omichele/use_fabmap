@@ -34,7 +34,7 @@ ENDIF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 
 IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  INCLUDE("/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/cmake_install.cmake")
+  INCLUDE("/home/michele/Documents/workspace/use_fabmap/openfabmap/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 
@@ -44,7 +44,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/home/michele/Documents/workspace/use_fabmap/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/home/michele/Documents/workspace/use_fabmap/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)
