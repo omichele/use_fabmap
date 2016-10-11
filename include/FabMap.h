@@ -8,6 +8,7 @@
 // connection to openFABMAP
 #include "openfabmap.hpp"
 
+
 namespace of2 {
 	class FabMap;
 }
@@ -59,12 +60,14 @@ private:
 	// instance of the original openFABMAP
 	cv::Ptr<of2::FabMap> fabMap;
 	
+	// enable the construction of the confusion matrix
 	const bool printConfusionMatrix = true;
 	cv::Mat confusionMat;
 	
 	bool valid;
 
 	const float minLoopProbability = 0.80f;
+	// this tolerance represent the number of frames
 	const int tolerance = 40;
 
 };

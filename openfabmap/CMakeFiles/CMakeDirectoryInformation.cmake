@@ -3,7 +3,7 @@
 
 # Relative path conversion top directories.
 SET(CMAKE_RELATIVE_PATH_TOP_SOURCE "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap")
-SET(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/michele/Documents/workspace/use_fabmap")
+SET(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap")
 
 # Force unix paths in dependencies.
 SET(CMAKE_FORCE_UNIX_PATHS 1)

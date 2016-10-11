@@ -38,7 +38,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/michele/Documents/workspace/use_fabmap
+CMAKE_BINARY_DIR = "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap"
 
 # Include any dependencies generated for this target.
 include openfabmap/CMakeFiles/openFABMAP.dir/depend.make
@@ -50,18 +50,18 @@ include openfabmap/CMakeFiles/openFABMAP.dir/progress.make
 include openfabmap/CMakeFiles/openFABMAP.dir/flags.make
 
 openfabmap/CMakeFiles/openFABMAP.dir/src/BOWMSCTrainer.cpp.o: openfabmap/CMakeFiles/openFABMAP.dir/flags.make
-openfabmap/CMakeFiles/openFABMAP.dir/src/BOWMSCTrainer.cpp.o: /home/michele/Documents/master\ thesis/softwares/workspace/use_fabmap/openfabmap/src/BOWMSCTrainer.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/michele/Documents/workspace/use_fabmap/CMakeFiles $(CMAKE_PROGRESS_1)
+openfabmap/CMakeFiles/openFABMAP.dir/src/BOWMSCTrainer.cpp.o: openfabmap/src/BOWMSCTrainer.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles" $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object openfabmap/CMakeFiles/openFABMAP.dir/src/BOWMSCTrainer.cpp.o"
-	cd /home/michele/Documents/workspace/use_fabmap/openfabmap && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/openFABMAP.dir/src/BOWMSCTrainer.cpp.o -c "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/src/BOWMSCTrainer.cpp"
+	cd "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap" && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/openFABMAP.dir/src/BOWMSCTrainer.cpp.o -c "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/src/BOWMSCTrainer.cpp"
 
 openfabmap/CMakeFiles/openFABMAP.dir/src/BOWMSCTrainer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/openFABMAP.dir/src/BOWMSCTrainer.cpp.i"
-	cd /home/michele/Documents/workspace/use_fabmap/openfabmap && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/src/BOWMSCTrainer.cpp" > CMakeFiles/openFABMAP.dir/src/BOWMSCTrainer.cpp.i
+	cd "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/src/BOWMSCTrainer.cpp" > CMakeFiles/openFABMAP.dir/src/BOWMSCTrainer.cpp.i
 
 openfabmap/CMakeFiles/openFABMAP.dir/src/BOWMSCTrainer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/openFABMAP.dir/src/BOWMSCTrainer.cpp.s"
-	cd /home/michele/Documents/workspace/use_fabmap/openfabmap && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/src/BOWMSCTrainer.cpp" -o CMakeFiles/openFABMAP.dir/src/BOWMSCTrainer.cpp.s
+	cd "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/src/BOWMSCTrainer.cpp" -o CMakeFiles/openFABMAP.dir/src/BOWMSCTrainer.cpp.s
 
 openfabmap/CMakeFiles/openFABMAP.dir/src/BOWMSCTrainer.cpp.o.requires:
 .PHONY : openfabmap/CMakeFiles/openFABMAP.dir/src/BOWMSCTrainer.cpp.o.requires
@@ -73,18 +73,18 @@ openfabmap/CMakeFiles/openFABMAP.dir/src/BOWMSCTrainer.cpp.o.provides: openfabma
 openfabmap/CMakeFiles/openFABMAP.dir/src/BOWMSCTrainer.cpp.o.provides.build: openfabmap/CMakeFiles/openFABMAP.dir/src/BOWMSCTrainer.cpp.o
 
 openfabmap/CMakeFiles/openFABMAP.dir/src/ChowLiuTree.cpp.o: openfabmap/CMakeFiles/openFABMAP.dir/flags.make
-openfabmap/CMakeFiles/openFABMAP.dir/src/ChowLiuTree.cpp.o: /home/michele/Documents/master\ thesis/softwares/workspace/use_fabmap/openfabmap/src/ChowLiuTree.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/michele/Documents/workspace/use_fabmap/CMakeFiles $(CMAKE_PROGRESS_2)
+openfabmap/CMakeFiles/openFABMAP.dir/src/ChowLiuTree.cpp.o: openfabmap/src/ChowLiuTree.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles" $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object openfabmap/CMakeFiles/openFABMAP.dir/src/ChowLiuTree.cpp.o"
-	cd /home/michele/Documents/workspace/use_fabmap/openfabmap && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/openFABMAP.dir/src/ChowLiuTree.cpp.o -c "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/src/ChowLiuTree.cpp"
+	cd "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap" && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/openFABMAP.dir/src/ChowLiuTree.cpp.o -c "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/src/ChowLiuTree.cpp"
 
 openfabmap/CMakeFiles/openFABMAP.dir/src/ChowLiuTree.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/openFABMAP.dir/src/ChowLiuTree.cpp.i"
-	cd /home/michele/Documents/workspace/use_fabmap/openfabmap && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/src/ChowLiuTree.cpp" > CMakeFiles/openFABMAP.dir/src/ChowLiuTree.cpp.i
+	cd "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/src/ChowLiuTree.cpp" > CMakeFiles/openFABMAP.dir/src/ChowLiuTree.cpp.i
 
 openfabmap/CMakeFiles/openFABMAP.dir/src/ChowLiuTree.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/openFABMAP.dir/src/ChowLiuTree.cpp.s"
-	cd /home/michele/Documents/workspace/use_fabmap/openfabmap && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/src/ChowLiuTree.cpp" -o CMakeFiles/openFABMAP.dir/src/ChowLiuTree.cpp.s
+	cd "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/src/ChowLiuTree.cpp" -o CMakeFiles/openFABMAP.dir/src/ChowLiuTree.cpp.s
 
 openfabmap/CMakeFiles/openFABMAP.dir/src/ChowLiuTree.cpp.o.requires:
 .PHONY : openfabmap/CMakeFiles/openFABMAP.dir/src/ChowLiuTree.cpp.o.requires
@@ -96,18 +96,18 @@ openfabmap/CMakeFiles/openFABMAP.dir/src/ChowLiuTree.cpp.o.provides: openfabmap/
 openfabmap/CMakeFiles/openFABMAP.dir/src/ChowLiuTree.cpp.o.provides.build: openfabmap/CMakeFiles/openFABMAP.dir/src/ChowLiuTree.cpp.o
 
 openfabmap/CMakeFiles/openFABMAP.dir/src/FabMap.cpp.o: openfabmap/CMakeFiles/openFABMAP.dir/flags.make
-openfabmap/CMakeFiles/openFABMAP.dir/src/FabMap.cpp.o: /home/michele/Documents/master\ thesis/softwares/workspace/use_fabmap/openfabmap/src/FabMap.cpp
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/michele/Documents/workspace/use_fabmap/CMakeFiles $(CMAKE_PROGRESS_3)
+openfabmap/CMakeFiles/openFABMAP.dir/src/FabMap.cpp.o: openfabmap/src/FabMap.cpp
+	$(CMAKE_COMMAND) -E cmake_progress_report "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/CMakeFiles" $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object openfabmap/CMakeFiles/openFABMAP.dir/src/FabMap.cpp.o"
-	cd /home/michele/Documents/workspace/use_fabmap/openfabmap && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/openFABMAP.dir/src/FabMap.cpp.o -c "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/src/FabMap.cpp"
+	cd "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap" && /usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -o CMakeFiles/openFABMAP.dir/src/FabMap.cpp.o -c "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/src/FabMap.cpp"
 
 openfabmap/CMakeFiles/openFABMAP.dir/src/FabMap.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/openFABMAP.dir/src/FabMap.cpp.i"
-	cd /home/michele/Documents/workspace/use_fabmap/openfabmap && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/src/FabMap.cpp" > CMakeFiles/openFABMAP.dir/src/FabMap.cpp.i
+	cd "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -E "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/src/FabMap.cpp" > CMakeFiles/openFABMAP.dir/src/FabMap.cpp.i
 
 openfabmap/CMakeFiles/openFABMAP.dir/src/FabMap.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/openFABMAP.dir/src/FabMap.cpp.s"
-	cd /home/michele/Documents/workspace/use_fabmap/openfabmap && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/src/FabMap.cpp" -o CMakeFiles/openFABMAP.dir/src/FabMap.cpp.s
+	cd "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -S "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/src/FabMap.cpp" -o CMakeFiles/openFABMAP.dir/src/FabMap.cpp.s
 
 openfabmap/CMakeFiles/openFABMAP.dir/src/FabMap.cpp.o.requires:
 .PHONY : openfabmap/CMakeFiles/openFABMAP.dir/src/FabMap.cpp.o.requires
@@ -151,7 +151,7 @@ lib/libopenFABMAP.so: /usr/lib/x86_64-linux-gnu/libopencv_imgproc.so.2.4.8
 lib/libopenFABMAP.so: /usr/lib/x86_64-linux-gnu/libopencv_core.so.2.4.8
 lib/libopenFABMAP.so: openfabmap/CMakeFiles/openFABMAP.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking CXX shared library ../lib/libopenFABMAP.so"
-	cd /home/michele/Documents/workspace/use_fabmap/openfabmap && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/openFABMAP.dir/link.txt --verbose=$(VERBOSE)
+	cd "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap" && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/openFABMAP.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 openfabmap/CMakeFiles/openFABMAP.dir/build: lib/libopenFABMAP.so
@@ -163,10 +163,10 @@ openfabmap/CMakeFiles/openFABMAP.dir/requires: openfabmap/CMakeFiles/openFABMAP.
 .PHONY : openfabmap/CMakeFiles/openFABMAP.dir/requires
 
 openfabmap/CMakeFiles/openFABMAP.dir/clean:
-	cd /home/michele/Documents/workspace/use_fabmap/openfabmap && $(CMAKE_COMMAND) -P CMakeFiles/openFABMAP.dir/cmake_clean.cmake
+	cd "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap" && $(CMAKE_COMMAND) -P CMakeFiles/openFABMAP.dir/cmake_clean.cmake
 .PHONY : openfabmap/CMakeFiles/openFABMAP.dir/clean
 
 openfabmap/CMakeFiles/openFABMAP.dir/depend:
-	cd /home/michele/Documents/workspace/use_fabmap && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap" "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap" /home/michele/Documents/workspace/use_fabmap /home/michele/Documents/workspace/use_fabmap/openfabmap /home/michele/Documents/workspace/use_fabmap/openfabmap/CMakeFiles/openFABMAP.dir/DependInfo.cmake --color=$(COLOR)
+	cd "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap" && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap" "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap" "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap" "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap" "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/openfabmap/CMakeFiles/openFABMAP.dir/DependInfo.cmake" --color=$(COLOR)
 .PHONY : openfabmap/CMakeFiles/openFABMAP.dir/depend
 

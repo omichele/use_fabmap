@@ -13,6 +13,7 @@ FabMap::FabMap()
 
 	std::string packagePath = "/home/michele/Documents/master thesis/softwares/workspace/use_fabmap/";
 
+    // These is an included trained vocabulary
 	//std::string fabmapTrainDataPath = packagePath + "openfabmap/trainingdata/StLuciaShortTraindata.yml";
 	//std::string vocabPath = packagePath + "openfabmap/trainingdata/StLuciaShortVocabulary.yml";
 	//std::string chowliutreePath = packagePath + "openfabmap/trainingdata/StLuciaShortTree.yml";
@@ -32,8 +33,6 @@ FabMap::FabMap()
 	std::string vocabPath = "/home/michele/Documents/master thesis/softwares/openFABMAPsample/Nantes/normal_voc_0_55/vocab.yml";
 	std::string chowliutreePath = "/home/michele/Documents/master thesis/softwares/openFABMAPsample/Nantes/normal_voc_0_55/tree.yml";
 	std::string resultsPath = packagePath + "results";
-
-
 
 	// Load training data
 	cv::FileStorage fsTraining;
@@ -120,7 +119,9 @@ FabMap::~FabMap()
 }
 
 
-
+/* Version of compareAndAdd in which targetROI2 is passed in order to plot
+ * the features detected on the image
+ */
 double FabMap::compareAndAdd(cv::Mat frame, int* out_newID, int* out_loopID, cv::Mat targetROI)
 {
 	// Convert keyframe image data to 3-channel OpenCV Mat (theoretically unneccessary)
@@ -172,9 +173,7 @@ double FabMap::compareAndAdd(cv::Mat frame, int* out_newID, int* out_loopID, cv:
 
 
 	float accumulatedProbability = 0;
-
-	int flag = 0;      // variable set by my to say if we have a match or not!!!
-
+	int flag = 0;      // variable set by me to say if we have a match or not!!!
 	double most_likely_place_prob = 0;
 
 
@@ -203,8 +202,7 @@ double FabMap::compareAndAdd(cv::Mat frame, int* out_newID, int* out_loopID, cv:
 		if (l->match >= minLoopProbability && abs( *out_newID - counter - 2 ) >= tolerance && l->match >= most_likely_place_prob)
 		{
 			*out_loopID = l->imgIdx;      // if a loop closure is detected
-			// std::cout << std::endl << counter  << std::endl;
-			// std::cout << std::endl << abs( *out_newID -  counter )  << std::endl;
+			
 			if (debugProbabilites){
 				std::cout << std::endl << "Match!!!"  << l->match << std::endl;
 				printf("\n");
@@ -236,6 +234,10 @@ double FabMap::compareAndAdd(cv::Mat frame, int* out_newID, int* out_loopID, cv:
 	return 0;
 }
 
+
+/* First version of compareAndAdd
+ * 
+ */
 
 void FabMap::compareAndAdd(cv::Mat frame, int* out_newID, int* out_loopID)
 {
@@ -314,8 +316,6 @@ void FabMap::compareAndAdd(cv::Mat frame, int* out_newID, int* out_loopID)
 			if (l->match >= minLoopProbability && abs( *out_newID - counter - 2 ) >= tolerance)
 			{
 				*out_loopID = l->imgIdx;      // if a loop closure is detected
-				// std::cout << std::endl << counter  << std::endl;
-				// std::cout << std::endl << abs( *out_newID -  counter )  << std::endl;
 				if (debugProbabilites){
 					std::cout << std::endl << "Match!!! Prob = "  << l->match << std::endl;
 					printf("\n");
